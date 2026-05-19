@@ -1,26 +1,94 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-navy: #1B2A4A;
+  --color-gold: #B8962E;
+  --color-brand-bg: #F2F4F7;
+  --color-body-text: #4A4A4A;
+  --color-white: #FFFFFF;
+  --color-dark-page: #0d1a30;
+  --color-dark-card: #1a2d47;
+
+  --font-sans: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #FFFFFF;
+  color: #4A4A4A;
+  font-family: var(--font-sans);
 }
+
+:root {
+  --hero-bg: linear-gradient(135deg, #eef1f6 0%, #dde5f0 55%, #cfd9ea 100%);
+}
+
+.dark {
+  --color-brand-bg: #111d33;
+  --color-body-text: #8ba3c0;
+  --hero-bg: linear-gradient(135deg, #0d1a30 0%, #1B2A4A 60%, #243756 100%);
+}
+
+.dark body {
+  background-color: #0d1a30;
+  color: #8ba3c0;
+}
+
+@keyframes lines-drift {
+  from { transform: translate(0, 0); }
+  to   { transform: translate(80px, 80px); }
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes count-pop {
+  from { opacity: 0; transform: scale(0.75) translateY(8px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+@keyframes gold-pulse {
+  0%, 100% { text-shadow: 0 0 0px transparent; }
+  50%       { text-shadow: 0 0 18px rgba(184,150,46,0.45); }
+}
+
+.animate-lines-drift {
+  animation: lines-drift 10s linear infinite;
+}
+
+.animate-fade-up {
+  animation: fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.6s ease both;
+}
+
+.animate-count-pop {
+  animation: count-pop 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.animate-gold-pulse {
+  animation: gold-pulse 3s ease-in-out infinite;
+}
+
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+.delay-600 { animation-delay: 600ms; }
+.delay-700 { animation-delay: 700ms; }
+.delay-800 { animation-delay: 800ms; }
