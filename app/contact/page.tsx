@@ -284,7 +284,7 @@ export default function ContactPage() {
                     <button
                       type="submit"
                       disabled={status === "sending"}
-                      className="w-full py-3.5 rounded-lg bg-navy text-white font-bold text-sm tracking-wide hover:brightness-110 transition-all disabled:opacity-60"
+                      className="w-full py-3.5 rounded-lg bg-navy text-white font-bold text-sm tracking-wide hover:brightness-110 transition-all disabled:opacity-60 dark:bg-white dark:text-navy dark:shadow-lg dark:shadow-white/6 dark:border dark:border-white/10 dark:hover:brightness-95"
                     >
                       {status === "sending" ? "Sending..." : "Submit Enquiry"}
                     </button>
