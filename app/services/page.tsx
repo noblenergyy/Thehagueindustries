@@ -26,7 +26,10 @@ import {
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "The Hague Industries Ltd offers general contracting, consultancy, B2B solutions, and remediation services across government, oil & gas, mining, healthcare, and digitalization sectors.",
+    "General contracting, consultancy, B2B supply agreements, and site remediation. The Hague Industries Ltd delivers across government, oil & gas, mining, and digitalization sectors in Nigeria.",
+  alternates: {
+    canonical: "https://thehagueindustries.com/services",
+  },
 };
 
 const differentiators = [

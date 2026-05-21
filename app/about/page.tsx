@@ -5,7 +5,10 @@ import { Fuel, Landmark, Activity, Pickaxe, Monitor } from "lucide-react";
 export const metadata: Metadata = {
   title: "About Us",
   description:
-    "Learn about The Hague Industries Ltd, our founding, leadership, corporate details, vision, mission, and areas of operation across Nigeria.",
+    "The Hague Industries Ltd (RC 8551874) was incorporated in June 2025 under CAMA 2020. Learn about our leadership, vision, mission, and operations across Nigeria's oil & gas, government, and mining sectors.",
+  alternates: {
+    canonical: "https://thehagueindustries.com/about",
+  },
 };
 
 const directors = [
@@ -35,7 +38,8 @@ const corporateInfo = [
   { label: "TIN", value: "33277749-0001" },
   { label: "Incorporation Date", value: "14 June 2025" },
   { label: "Registered Under", value: "CAMA 2020" },
-  { label: "Registered Address", value: "Plot 7, Bwari Close, Area 8, Garki, Abuja-FCT" },
+  { label: "Registered Address", value: "101 Moronfolu Street, Akoka, Lagos State" },
+  { label: "Office Address", value: "Plot 7, Bwari Close, Area 8, Garki, Abuja-FCT" },
   { label: "Company Secretary", value: "Maxine & Partners (RC: 3140041)" },
   { label: "Email", value: "thehagueindustries@gmail.com" },
 ];
@@ -85,7 +89,7 @@ export default function AboutPage() {
             The Hague Industries Ltd is a general contracting, consultancy, and
             allied services company incorporated under the Companies and Allied
             Matters Act (CAMA) 2020, with RC Number 8551874. Registered in
-            Abuja and operating nationwide, we were built on a philosophy of
+            Lagos and operating nationwide, we were built on a philosophy of
             excellence, compliance, and strategic agility.
           </p>
           <p className="text-body-text leading-relaxed text-base mb-4">

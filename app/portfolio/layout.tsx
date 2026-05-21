@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Portfolio | The Hague Industries Ltd",
+  title: "Portfolio",
   description:
-    "A record of delivery across sectors and geographies. View completed and active mandates by The Hague Industries Ltd.",
+    "Track record of The Hague Industries Ltd across oil & gas, government, mining, B2B trade, and financial services. View completed and active mandates.",
+  alternates: {
+    canonical: "https://thehagueindustries.com/portfolio",
+  },
 };
 
 export default function PortfolioLayout({ children }: { children: React.ReactNode }) {

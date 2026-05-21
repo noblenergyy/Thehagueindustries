@@ -18,21 +18,29 @@ export const metadata: Metadata = {
     template: "%s | The Hague Industries Ltd",
   },
   description:
-    "The Hague Industries Ltd is a Nigerian-incorporated contracting, consultancy, and allied services company. Serving government MDAs, corporate clients, and B2B partners across sectors.",
+    "The Hague Industries Ltd (RC 8551874) is a CAC-registered Nigerian contracting, consultancy, and advisory company serving government MDAs, oil & gas, mining, and corporate clients nationwide.",
   keywords: [
     "The Hague Industries",
-    "contracting Nigeria",
+    "The Hague Industries Ltd",
+    "contracting company Nigeria",
     "general contracting Lagos",
+    "general contracting Abuja",
     "government advisory Nigeria",
     "B2B solutions Nigeria",
     "oil gas contractor Nigeria",
-    "CAC registered company",
+    "CAC registered company Nigeria",
     "RC 8551874",
+    "consultancy Nigeria",
+    "mining advisory Nigeria",
+    "infrastructure contractor Nigeria",
   ],
+  alternates: {
+    canonical: "https://thehagueindustries.com",
+  },
   openGraph: {
-    title: "The Hague Industries Ltd",
+    title: "The Hague Industries Ltd | Multi-Sector Contracting & Advisory",
     description:
-      "Multi-sector contracting and advisory company. CAC registered, compliance-driven, nationwide reach.",
+      "CAC-registered Nigerian contracting and advisory company. Oil & gas, government, mining, and B2B sectors. RC 8551874.",
     type: "website",
     locale: "en_NG",
     url: "https://thehagueindustries.com",
@@ -42,7 +50,7 @@ export const metadata: Metadata = {
     card: "summary",
     title: "The Hague Industries Ltd",
     description:
-      "Multi-sector contracting and advisory company. CAC registered, compliance-driven, nationwide reach.",
+      "CAC-registered Nigerian contracting and advisory company. Oil & gas, government, mining, and B2B sectors.",
   },
   robots: {
     index: true,
@@ -56,6 +64,46 @@ export const metadata: Metadata = {
 
 const themeScript = `(function(){try{var t=localStorage.getItem('theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.classList.add('dark')}}catch(e){}})()`;
 
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "The Hague Industries Ltd",
+  alternateName: "The Hague Industries",
+  url: "https://thehagueindustries.com",
+  logo: "https://thehagueindustries.com/icon.png",
+  description:
+    "CAC-registered Nigerian contracting, consultancy, and advisory company. Serving government MDAs, oil & gas, mining, and corporate clients nationwide.",
+  foundingDate: "2025",
+  legalName: "The Hague Industries Ltd",
+  vatID: "33277749-0001",
+  address: [
+    {
+      "@type": "PostalAddress",
+      streetAddress: "101 Moronfolu Street, Akoka",
+      addressLocality: "Lagos",
+      addressRegion: "Lagos State",
+      addressCountry: "NG",
+    },
+    {
+      "@type": "PostalAddress",
+      streetAddress: "Plot 7, Bwari Close, Area 8, Garki",
+      addressLocality: "Abuja",
+      addressRegion: "FCT",
+      addressCountry: "NG",
+    },
+  ],
+  contactPoint: {
+    "@type": "ContactPoint",
+    email: "thehagueindustries@gmail.com",
+    contactType: "customer service",
+    areaServed: "NG",
+  },
+  areaServed: {
+    "@type": "Country",
+    name: "Nigeria",
+  },
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
@@ -63,6 +111,10 @@ export default function RootLayout({
     <html lang="en" className={montserrat.variable} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
       </head>
       <body className="flex flex-col min-h-screen">
         <Navbar />
