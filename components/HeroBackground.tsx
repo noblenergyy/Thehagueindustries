@@ -15,8 +15,8 @@ export default function HeroBackground() {
 
   // Gold lines on dark bg, navy lines on light bg
   const lineColor = isDark
-    ? "rgba(184,150,46,0.09)"
-    : "rgba(27,42,74,0.07)";
+    ? "rgba(184,150,46,0.14)"
+    : "rgba(27,42,74,0.14)";
 
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -34,7 +34,7 @@ export default function HeroBackground() {
           bottom: "-80px",
           backgroundImage: `repeating-linear-gradient(135deg, transparent, transparent 38px, ${lineColor} 38px, ${lineColor} 39px)`,
           backgroundSize: "80px 80px",
-          animation: "lines-drift 7s linear infinite",
+          animation: "lines-drift 5s linear infinite",
         }}
       />
       {/* Soft radial glow behind the headline */}
@@ -43,8 +43,8 @@ export default function HeroBackground() {
           position: "absolute",
           inset: 0,
           background: isDark
-            ? "radial-gradient(ellipse 70% 55% at 50% 45%, rgba(184,150,46,0.09) 0%, transparent 70%)"
-            : "radial-gradient(ellipse 70% 55% at 50% 45%, rgba(184,150,46,0.12) 0%, transparent 70%)",
+            ? "radial-gradient(ellipse 70% 55% at 50% 45%, rgba(184,150,46,0.14) 0%, transparent 70%)"
+            : "radial-gradient(ellipse 70% 55% at 50% 45%, rgba(184,150,46,0.18) 0%, transparent 70%)",
         }}
       />
     </div>

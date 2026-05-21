@@ -19,6 +19,8 @@ import {
   FileText,
   Link2,
   UserCheck,
+  Globe,
+  Truck,
 } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -138,7 +140,27 @@ export default function ServicesPage() {
       <section id="consultancy" className="bg-brand-bg py-20 scroll-mt-18">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-            <div className="order-2 lg:order-1 grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <p className="text-gold text-xs uppercase tracking-widest font-medium mb-2">
+                Service Line 02
+              </p>
+              <h2 className="text-3xl font-bold text-navy dark:text-white mb-4">
+                Consultancy
+              </h2>
+              <p className="text-body-text leading-relaxed mb-6">
+                Our advisory arm delivers strategic, regulatory, and operational
+                guidance to organisations navigating complex environments, from
+                government relations to project governance and compliance
+                structuring.
+              </p>
+              <Link
+                href="/contact?subject=Service Request"
+                className="inline-block px-7 py-3 rounded bg-navy text-white text-sm font-semibold hover:brightness-110 transition-all"
+              >
+                Enquire About This Service
+              </Link>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {[
                 {
                   Icon: BarChart2,
@@ -174,26 +196,6 @@ export default function ServicesPage() {
                   </p>
                 </div>
               ))}
-            </div>
-            <div className="order-1 lg:order-2">
-              <p className="text-gold text-xs uppercase tracking-widest font-medium mb-2">
-                Service Line 02
-              </p>
-              <h2 className="text-3xl font-bold text-navy dark:text-white mb-4">
-                Consultancy
-              </h2>
-              <p className="text-body-text leading-relaxed mb-6">
-                Our advisory arm delivers strategic, regulatory, and operational
-                guidance to organisations navigating complex environments, from
-                government relations to project governance and compliance
-                structuring.
-              </p>
-              <Link
-                href="/contact?subject=Service Request"
-                className="inline-block px-7 py-3 rounded bg-navy text-white text-sm font-semibold hover:brightness-110 transition-all"
-              >
-                Enquire About This Service
-              </Link>
             </div>
           </div>
         </div>
@@ -232,7 +234,7 @@ export default function ServicesPage() {
                 </Link>
               </div>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-1 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {[
                 {
                   Icon: FileText,
@@ -248,6 +250,16 @@ export default function ServicesPage() {
                   Icon: UserCheck,
                   title: "Vendor / Sub-contractor Engagement",
                   desc: "Identifying, vetting, and contracting qualified vendors and sub-contractors for project delivery.",
+                },
+                {
+                  Icon: Globe,
+                  title: "Cross-Border Trade Facilitation",
+                  desc: "Structuring distribution and supply arrangements across jurisdictions, including sole distributor agreements and market entry frameworks for international principals.",
+                },
+                {
+                  Icon: Truck,
+                  title: "Supply Facilitation",
+                  desc: "End-to-end management of supply mandates between corporate counterparts, from agreement structuring through to delivery and documentation.",
                 },
               ].map((item) => (
                 <div

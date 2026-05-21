@@ -10,14 +10,14 @@ export const metadata: Metadata = {
 
 const directors = [
   {
-    name: "Ikeri Chisom K.",
+    name: "Chisom K. Ikeri",
     title: "Chief Executive Officer",
-    bio: "A forward-thinking executive with a mandate to drive operational excellence and strategic growth across the company's diverse service lines.",
+    bio: "Chisom K. Ikeri is the founding Chief Executive of The Hague Industries Ltd, directing the company's strategy across general contracting, B2B trade facilitation, and multi-sector advisory. Since incorporation, he has led the company's engagements in oil and gas supply, cross-jurisdictional distribution structuring, and government digitalization- establishing The Hague Industries as a credible operator across Nigeria's public and private sectors within its first year.",
   },
   {
     name: "Ikeri Ikedi Adrain",
     title: "Chief Operating Officer",
-    bio: "An accomplished leader overseeing project execution and business development, ensuring every mandate meets The Hague Industries standard.",
+    bio: "Ikeri Ikedi Adrain oversees operations, contract execution, and business development across the company's active mandates. His remit spans supply chain management, compliance advisory delivery, and B2B partnership structuring- ensuring every engagement meets The Hague Industries' standard from initiation to close. He has operational oversight across the company's oil and gas, government, and mining sector work.",
   },
 ];
 
@@ -32,6 +32,7 @@ const values = [
 const corporateInfo = [
   { label: "Company Name", value: "The Hague Industries Ltd" },
   { label: "RC Number", value: "8551874" },
+  { label: "TIN", value: "33277749-0001" },
   { label: "Incorporation Date", value: "14 June 2025" },
   { label: "Registered Under", value: "CAMA 2020" },
   { label: "Registered Address", value: "101 Moronfolu Street, Akoka, Lagos State" },
@@ -116,7 +117,7 @@ export default function AboutPage() {
               <p className="text-gold text-xs uppercase tracking-widest font-semibold mb-3">
                 Vision
               </p>
-              <p className="text-body-text leading-relaxed">
+              <p className="text-gray-700 dark:text-white/65 leading-relaxed">
                 To be the most trusted and capable multi-sector contracting and
                 advisory enterprise operating out of West Africa.
               </p>
@@ -125,7 +126,7 @@ export default function AboutPage() {
               <p className="text-gold text-xs uppercase tracking-widest font-semibold mb-3">
                 Mission
               </p>
-              <p className="text-body-text leading-relaxed">
+              <p className="text-gray-700 dark:text-white/65 leading-relaxed">
                 To deliver contracts, advisory mandates, and B2B partnerships
                 with precision, integrity, and accountability, building value
                 for clients and communities across every jurisdiction we operate
@@ -202,7 +203,7 @@ export default function AboutPage() {
               Board of Directors
             </h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
             {directors.map((d) => (
               <div
                 key={d.name}

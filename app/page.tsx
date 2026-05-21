@@ -71,11 +71,11 @@ const serviceCards = [
 
 const featuredProjects = [
   {
-    title: "Supply Agreement: Rainoil Limited",
+    title: "Downstream Supply Agreement",
     client: "Rainoil Ltd",
     sector: "Oil & Gas",
     outcome: "Completed",
-    desc: "Executed a commercial supply agreement including issuance of a Bill of Collection for oil & gas product supply.",
+    desc: "Structured and executed a commercial supply agreement with Rainoil Limited for oil & gas product supply, including issuance of a formal Bill of Collection.",
   },
   {
     title: "Enugu Digital Economy Portal Proposal",
@@ -95,7 +95,7 @@ const featuredProjects = [
 
 const stats = [
   { label: "Year Established", value: "2025" },
-  { label: "Completed Projects", value: "3+" },
+  { label: "Active Mandates", value: "5+" },
   { label: "Sectors Served", value: "5" },
   { label: "States of Operation", value: "6+" },
 ];

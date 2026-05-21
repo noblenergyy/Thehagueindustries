@@ -5,12 +5,12 @@ import Link from "next/link";
 
 const projects = [
   {
-    title: "Supply Agreement: Rainoil Limited",
+    title: "Downstream Supply Agreement",
     client: "Rainoil Ltd",
     sector: "Oil & Gas",
     year: "2026",
     status: "Completed",
-    desc: "Executed a commercial supply agreement with Rainoil Ltd, including issuance of a Bill of Collection for oil & gas product supply.",
+    desc: "Structured and executed a commercial supply agreement with Rainoil Limited for oil & gas product supply, including issuance of a formal Bill of Collection. The engagement demonstrated The Hague Industries' capacity to perform in the downstream petroleum sector with full documentation and regulatory compliance.",
   },
   {
     title: "Enugu Digital Economy Portal: State Government Proposal",
@@ -28,13 +28,30 @@ const projects = [
     status: "Delivered",
     desc: "Prepared a compliance advisory note for a Niger State mining transaction, covering regulatory requirements and risk considerations.",
   },
+  {
+    title: "Cross-Jurisdiction Trade Facilitation - Sole Distributor Agreement",
+    client: "Confidential",
+    sector: "B2B / Trade",
+    year: "2026",
+    status: "In Progress",
+    desc: "Structuring a sole distributor agreement to facilitate cross-border product distribution on behalf of a principal. The mandate involves jurisdictional compliance, distribution rights formalization, and commercial terms negotiation - positioning The Hague Industries as a trade facilitation vehicle for international principals seeking a Nigerian market entry partner.",
+  },
+  {
+    title: "Financial Services Entry - MFB Licence Acquisition",
+    client: "The Hague Industries",
+    sector: "Financial Services",
+    year: "2026",
+    status: "In Progress",
+    desc: "Pursuing the strategic acquisition of a CBN-regulated Microfinance Bank licence as a vehicle for entry into Nigeria's financial inclusion and fintech sector. Transaction being structured through the company's consulting arm with full regulatory advisory.",
+  },
 ];
 
-const filters = ["All", "Government", "Oil & Gas", "Mining", "Healthcare", "Digitalization"];
+const filters = ["All", "Oil & Gas", "Government", "Mining", "B2B", "Financial Services", "Healthcare", "Digitalization"];
 
 const statusStyle: Record<string, string> = {
   Completed: "bg-green-100 text-green-700",
   Delivered: "bg-blue-100 text-blue-700",
+  "In Progress": "bg-amber-100 text-amber-700",
   "Under Review": "bg-amber-100 text-amber-700",
   Ongoing: "bg-purple-100 text-purple-700",
 };
