@@ -126,9 +126,9 @@ export default function ContactPage() {
                       Registered Address
                     </p>
                     <p className="text-body-text text-sm">
-                      Plot 7, Bwari Close, Area 8,
+                      101 Moronfolu Street, Akoka, Lagos
                       <br />
-                      Garki, Abuja-FCT, Nigeria
+                      Plot 7, Bwari Close, Area 8, Garki, Abuja-FCT
                     </p>
                   </div>
                 </div>
