@@ -71,11 +71,11 @@ const serviceCards = [
 
 const featuredProjects = [
   {
-    title: "Downstream Supply Agreement",
+    title: "Supply Agreement: Rainoil Limited",
     client: "Rainoil Ltd",
     sector: "Oil & Gas",
     outcome: "Completed",
-    desc: "Structured and executed a commercial supply agreement with Rainoil Limited for oil & gas product supply, including issuance of a formal Bill of Collection.",
+    desc: "Executed a commercial supply agreement including issuance of a Bill of Collection for oil & gas product supply.",
   },
   {
     title: "Enugu Digital Economy Portal Proposal",
@@ -111,7 +111,7 @@ export default function HomePage() {
         <HeroBackground />
         <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
           <p className="animate-fade-up text-gold text-xs tracking-[0.3em] uppercase mb-6 font-medium">
-            RC 8551874 &nbsp;|&nbsp; Lagos, Nigeria
+            RC 8551874 &nbsp;|&nbsp; Abuja-FCT, Nigeria
           </p>
           <h1 className="animate-fade-up delay-100 text-4xl sm:text-5xl md:text-6xl font-bold text-navy dark:text-white leading-tight mb-6">
             Delivering Excellence
@@ -216,7 +216,7 @@ export default function HomePage() {
                 time. From general contracting and remediation to B2B
                 partnerships and government advisory, we operate wherever our
                 clients need us, with the compliance infrastructure to match.
-              </p>
+              </p>what 
               <p className="text-gold font-semibold italic text-lg mb-6">
                 &ldquo;Our vision is transnational. Our execution is local. Our
                 standard is non-negotiable.&rdquo;

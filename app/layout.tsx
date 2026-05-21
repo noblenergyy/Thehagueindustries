@@ -12,6 +12,7 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://thehagueindustries.com"),
   title: {
     default: "The Hague Industries Ltd | Multi-Sector Contracting & Advisory",
     template: "%s | The Hague Industries Ltd",
@@ -19,12 +20,14 @@ export const metadata: Metadata = {
   description:
     "The Hague Industries Ltd is a Nigerian-incorporated contracting, consultancy, and allied services company. Serving government MDAs, corporate clients, and B2B partners across sectors.",
   keywords: [
+    "The Hague Industries",
     "contracting Nigeria",
     "general contracting Lagos",
     "government advisory Nigeria",
     "B2B solutions Nigeria",
     "oil gas contractor Nigeria",
     "CAC registered company",
+    "RC 8551874",
   ],
   openGraph: {
     title: "The Hague Industries Ltd",
@@ -32,6 +35,22 @@ export const metadata: Metadata = {
       "Multi-sector contracting and advisory company. CAC registered, compliance-driven, nationwide reach.",
     type: "website",
     locale: "en_NG",
+    url: "https://thehagueindustries.com",
+    siteName: "The Hague Industries Ltd",
+  },
+  twitter: {
+    card: "summary",
+    title: "The Hague Industries Ltd",
+    description:
+      "Multi-sector contracting and advisory company. CAC registered, compliance-driven, nationwide reach.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
   },
 };
 

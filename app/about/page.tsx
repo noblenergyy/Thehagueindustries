@@ -35,7 +35,7 @@ const corporateInfo = [
   { label: "TIN", value: "33277749-0001" },
   { label: "Incorporation Date", value: "14 June 2025" },
   { label: "Registered Under", value: "CAMA 2020" },
-  { label: "Registered Address", value: "101 Moronfolu Street, Akoka, Lagos State" },
+  { label: "Registered Address", value: "Plot 7, Bwari Close, Area 8, Garki, Abuja-FCT" },
   { label: "Company Secretary", value: "Maxine & Partners (RC: 3140041)" },
   { label: "Email", value: "thehagueindustries@gmail.com" },
 ];
@@ -85,7 +85,7 @@ export default function AboutPage() {
             The Hague Industries Ltd is a general contracting, consultancy, and
             allied services company incorporated under the Companies and Allied
             Matters Act (CAMA) 2020, with RC Number 8551874. Registered in
-            Lagos and operating nationwide, we were built on a philosophy of
+            Abuja and operating nationwide, we were built on a philosophy of
             excellence, compliance, and strategic agility.
           </p>
           <p className="text-body-text leading-relaxed text-base mb-4">

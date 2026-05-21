@@ -18,9 +18,9 @@ export default function Footer() {
           <div>
             <Logo className="mb-4" />
             <p className="text-white/70 text-sm leading-relaxed">
-              101 Moronfolu Street,
+              Plot 7, Bwari Close, Area 8,
               <br />
-              Akoka, Lagos State, Nigeria
+              Garki, Abuja-FCT, Nigeria
             </p>
             <a
               href="mailto:thehagueindustries@gmail.com"
