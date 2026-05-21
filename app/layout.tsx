@@ -70,7 +70,7 @@ const organizationSchema = {
   name: "The Hague Industries Ltd",
   alternateName: "The Hague Industries",
   url: "https://thehagueindustries.com",
-  logo: "https://thehagueindustries.com/icon.png",
+  logo: "https://thehagueindustries.com/opengraph-image.png",
   description:
     "CAC-registered Nigerian contracting, consultancy, and advisory company. Serving government MDAs, oil & gas, mining, and corporate clients nationwide.",
   foundingDate: "2025",
