@@ -1,6 +1,3 @@
-"use client";
-import { useEffect, useRef } from "react";
-
 function FloatingPaths({ position }: { position: number }) {
   const paths = Array.from({ length: 36 }, (_, i) => ({
     id: i,
@@ -17,7 +14,10 @@ function FloatingPaths({ position }: { position: number }) {
   }));
 
   return (
-    <div className="absolute inset-0 pointer-events-none" style={{ contain: "paint" }}>
+    <div
+      className="absolute inset-0 pointer-events-none"
+      style={{ contain: "paint" }}
+    >
       <svg
         className="w-full h-full"
         style={{ color: "#c9a535" }}
@@ -43,22 +43,8 @@ function FloatingPaths({ position }: { position: number }) {
 }
 
 export default function FloatingPathsBg() {
-  const ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const obs = new IntersectionObserver(
-      ([entry]) => el.classList.toggle("fp-paused", !entry.isIntersecting),
-      { threshold: 0 }
-    );
-    obs.observe(el);
-    return () => obs.disconnect();
-  }, []);
-
   return (
     <div
-      ref={ref}
       className="absolute inset-0 overflow-hidden pointer-events-none"
       style={{ contain: "paint" }}
     >
