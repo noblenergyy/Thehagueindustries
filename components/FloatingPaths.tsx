@@ -1,5 +1,5 @@
 function FloatingPaths({ position }: { position: number }) {
-  const paths = Array.from({ length: 36 }, (_, i) => ({
+  const paths = Array.from({ length: 18 }, (_, i) => ({
     id: i,
     d: `M-${380 - i * 10 * position} -${189 + i * 12}C-${
       380 - i * 10 * position
