@@ -10,14 +10,10 @@ function FloatingPaths({ position }: { position: number }) {
     } ${875 - i * 12} ${684 - i * 10 * position} ${875 - i * 12}`,
     width: 0.5 + i * 0.04,
     opacity: Math.min(0.06 + i * 0.013, 0.25),
-    duration: 8 + (i % 9) * 1.5,
   }));
 
   return (
-    <div
-      className="absolute inset-0 pointer-events-none"
-      style={{ contain: "paint" }}
-    >
+    <div className="absolute inset-0 pointer-events-none" style={{ contain: "paint" }}>
       <svg
         className="w-full h-full"
         style={{ color: "#c9a535" }}
@@ -33,8 +29,6 @@ function FloatingPaths({ position }: { position: number }) {
             stroke="currentColor"
             strokeWidth={path.width}
             strokeOpacity={path.opacity}
-            strokeDasharray="500 100"
-            style={{ animation: `dash-flow ${path.duration}s linear infinite` }}
           />
         ))}
       </svg>
@@ -44,10 +38,7 @@ function FloatingPaths({ position }: { position: number }) {
 
 export default function FloatingPathsBg() {
   return (
-    <div
-      className="absolute inset-0 overflow-hidden pointer-events-none"
-      style={{ contain: "paint" }}
-    >
+    <div className="absolute inset-0 overflow-hidden pointer-events-none" style={{ contain: "paint" }}>
       <FloatingPaths position={1} />
       <FloatingPaths position={-1} />
     </div>
