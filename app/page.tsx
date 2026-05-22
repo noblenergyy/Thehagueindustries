@@ -23,7 +23,7 @@ const valuePillars = [
   {
     Icon: Landmark,
     title: "CAC Registered",
-    desc: "Fully incorporated under CAMA 2020 | RC 8551874",
+    desc: "Duly incorporated under CAMA 2020 | RC 8551874",
   },
   {
     Icon: Globe,
@@ -111,17 +111,18 @@ export default function HomePage() {
         <HeroBackground />
         <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
           <p className="animate-fade-up text-gold text-xs tracking-[0.3em] uppercase mb-6 font-medium">
-            RC 8551874 &nbsp;|&nbsp; Lagos &amp; Abuja, Nigeria
+            RC 8551874 &nbsp;|&nbsp; Lagos &amp; Abuja,{" "}
+            <span className="text-[0.78em] tracking-[0.08em] font-light normal-case opacity-75">Nigeria</span>
           </p>
           <h1 className="animate-fade-up delay-100 text-4xl sm:text-5xl md:text-6xl font-bold text-navy dark:text-white leading-tight mb-6">
-            Delivering Excellence
-            <br />
-            <span className="text-gold animate-gold-pulse">Across Every Contract.</span>
+            Built for the Mandates That Matter.
           </h1>
           <p className="animate-fade-up delay-200 text-navy/65 dark:text-white/75 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
-            The Hague Industries Ltd is a Nigerian-incorporated contracting and
-            advisory company built to perform, pivot, and scale across sectors
-            and across borders.
+            The Hague Industries Ltd operates at the convergence of government,
+            commerce, and international trade. Built for the work that demands
+            precision, jurisdiction-spanning reach, and an uncompromising
+            standard. Contracting. Trade facilitation. Institutional advisory.
+            Wherever the mandate leads.
           </p>
           <div className="animate-fade-up delay-300 flex flex-col sm:flex-row gap-4 justify-center">
             <Link

@@ -8,8 +8,8 @@
   --color-brand-bg: #F2F4F7;
   --color-body-text: #4A4A4A;
   --color-white: #FFFFFF;
-  --color-dark-page: #0d1a30;
-  --color-dark-card: #1a2d47;
+  --color-dark-page: #040f1d;
+  --color-dark-card: #0a1c30;
 
   --font-sans: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
 }
@@ -29,14 +29,29 @@ body {
 }
 
 .dark {
-  --color-brand-bg: #111d33;
-  --color-body-text: #8ba3c0;
-  --hero-bg: linear-gradient(135deg, #0d1a30 0%, #1B2A4A 60%, #243756 100%);
+  --color-brand-bg: #061320;
+  --color-body-text: #7a9abb;
+  --color-dark-page: #040f1d;
+  --color-dark-card: #0a1c30;
+  --hero-bg: linear-gradient(135deg, #020a14 0%, #040e1c 60%, #071626 100%);
 }
 
 .dark body {
-  background-color: #0d1a30;
-  color: #8ba3c0;
+  background-color: #040f1d;
+  color: #7a9abb;
+}
+
+/* Dark mode: steel-blue text accent instead of yellow/gold */
+.dark .text-gold {
+  color: #a8c8e8;
+}
+
+/* Dark mode navbar — deep glass panel */
+.dark header {
+  background-color: rgba(2, 8, 18, 0.94);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 @keyframes lines-drift {
@@ -64,8 +79,28 @@ body {
   50%       { text-shadow: 0 0 18px rgba(184,150,46,0.45); }
 }
 
+@keyframes slide-left {
+  from { opacity: 0; transform: translateX(-28px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slide-right {
+  from { opacity: 0; transform: translateX(28px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-10px); }
+}
+
+@keyframes border-glow {
+  0%, 100% { box-shadow: 0 0 0px transparent; }
+  50%       { box-shadow: 0 0 20px rgba(80, 150, 255, 0.18); }
+}
+
 .animate-lines-drift {
-  animation: lines-drift 10s linear infinite;
+  animation: lines-drift 5s linear infinite;
 }
 
 .animate-fade-up {
@@ -84,7 +119,21 @@ body {
   animation: gold-pulse 3s ease-in-out infinite;
 }
 
+.animate-slide-left {
+  animation: slide-left 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.animate-slide-right {
+  animation: slide-right 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.delay-50  { animation-delay: 50ms; }
 .delay-100 { animation-delay: 100ms; }
+.delay-150 { animation-delay: 150ms; }
 .delay-200 { animation-delay: 200ms; }
 .delay-300 { animation-delay: 300ms; }
 .delay-400 { animation-delay: 400ms; }
@@ -93,20 +142,45 @@ body {
 .delay-700 { animation-delay: 700ms; }
 .delay-800 { animation-delay: 800ms; }
 
-/* Card animation (used across pages) */
+/* ─── Card scroll-reveal ─── */
 .card-animate {
   opacity: 0;
-  transform: translateY(14px) scale(0.995);
-  transition: opacity 560ms cubic-bezier(0.22, 1, 0.36, 1), transform 560ms cubic-bezier(0.22, 1, 0.36, 1);
+  transform: translateY(18px) scale(0.997);
+  transition: opacity 600ms cubic-bezier(0.22, 1, 0.36, 1),
+              transform 600ms cubic-bezier(0.22, 1, 0.36, 1);
   will-change: opacity, transform;
 }
+
 .card-animate.is-visible {
   opacity: 1;
   transform: none;
 }
 
-/* Slight lift on hover for visible cards */
 .card-animate.is-visible:hover {
   transform: translateY(-6px) scale(1.01);
-  transition: transform 240ms ease;
+  transition: transform 250ms ease, box-shadow 250ms ease, border-color 250ms ease;
 }
+
+/* Blue glow on card hover in dark mode */
+.dark .card-animate.is-visible:hover {
+  box-shadow: 0 24px 64px rgba(1, 5, 18, 0.9), 0 0 0 1px rgba(70, 140, 230, 0.14);
+  border-color: rgba(70, 140, 230, 0.18) !important;
+}
+
+/* ─── Section heading reveal ─── */
+.section-reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 700ms cubic-bezier(0.22, 1, 0.36, 1),
+              transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.section-reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+.section-reveal.reveal-delay-1 { transition-delay: 90ms; }
+.section-reveal.reveal-delay-2 { transition-delay: 180ms; }
+.section-reveal.reveal-delay-3 { transition-delay: 270ms; }

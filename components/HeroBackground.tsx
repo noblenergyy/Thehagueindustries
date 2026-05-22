@@ -13,9 +13,9 @@ export default function HeroBackground() {
     return () => obs.disconnect();
   }, []);
 
-  // Gold lines on dark bg, navy lines on light bg
+  // Steel-blue lines on dark bg, navy lines on light bg
   const lineColor = isDark
-    ? "rgba(184,150,46,0.14)"
+    ? "rgba(50, 110, 200, 0.1)"
     : "rgba(27,42,74,0.14)";
 
   return (
@@ -43,7 +43,7 @@ export default function HeroBackground() {
           position: "absolute",
           inset: 0,
           background: isDark
-            ? "radial-gradient(ellipse 70% 55% at 50% 45%, rgba(184,150,46,0.14) 0%, transparent 70%)"
+            ? "radial-gradient(ellipse 70% 55% at 50% 45%, rgba(20, 60, 160, 0.22) 0%, transparent 70%)"
             : "radial-gradient(ellipse 70% 55% at 50% 45%, rgba(184,150,46,0.18) 0%, transparent 70%)",
         }}
       />

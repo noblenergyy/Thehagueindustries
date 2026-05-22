@@ -4,11 +4,15 @@ import { useEffect } from "react";
 
 export default function ScrollAnimator() {
   useEffect(() => {
-    const selector = ".rounded-lg, .rounded-xl";
-    const els = Array.from(document.querySelectorAll(selector)) as HTMLElement[];
+    const vh = window.innerHeight;
+    const belowFold = (el: HTMLElement) =>
+      el.getBoundingClientRect().top > vh * 0.88;
 
-    // Heuristic: treat elements with padding/border/shadow as cards
-    const cards = els.filter((el) => {
+    // ── Cards ──
+    const cardEls = Array.from(
+      document.querySelectorAll(".rounded-lg, .rounded-xl")
+    ) as HTMLElement[];
+    const cards = cardEls.filter((el) => {
       const cls = el.classList;
       return (
         cls.contains("shadow-sm") ||
@@ -20,28 +24,45 @@ export default function ScrollAnimator() {
     cards.forEach((el, i) => {
       if (!el.classList.contains("card-animate")) {
         el.classList.add("card-animate");
-        // stagger small delays for pleasing cascade
-        el.style.transitionDelay = `${Math.min(600, i * 60)}ms`;
+        el.style.transitionDelay = `${Math.min(560, i * 58)}ms`;
       }
     });
 
-    if (!cards.length) return;
+    // ── Section headings ──
+    const headings = Array.from(
+      document.querySelectorAll("section h2, section h3")
+    ) as HTMLElement[];
+
+    headings.forEach((el) => {
+      if (
+        belowFold(el) &&
+        !el.classList.contains("section-reveal") &&
+        !el.classList.contains("animate-fade-up")
+      ) {
+        el.classList.add("section-reveal");
+      }
+    });
+
+    const targets = [
+      ...cards,
+      ...headings.filter((el) => el.classList.contains("section-reveal")),
+    ];
+
+    if (!targets.length) return;
 
     const obs = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          const target = entry.target as HTMLElement;
           if (entry.isIntersecting) {
-            target.classList.add("is-visible");
-            obs.unobserve(target);
+            (entry.target as HTMLElement).classList.add("is-visible");
+            obs.unobserve(entry.target);
           }
         });
       },
-      { threshold: 0.12 }
+      { threshold: 0.1 }
     );
 
-    cards.forEach((c) => obs.observe(c));
-
+    targets.forEach((el) => obs.observe(el));
     return () => obs.disconnect();
   }, []);
 
