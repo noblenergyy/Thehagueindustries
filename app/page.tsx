@@ -10,7 +10,6 @@ import {
   Users,
   Wrench,
 } from "lucide-react";
-import HeroBackground from "@/components/HeroBackground";
 import StatCounter from "@/components/StatCounter";
 import CyclingWord from "@/components/CyclingWord";
 import FloatingPathsBg from "@/components/FloatingPaths";
@@ -110,7 +109,11 @@ export default function HomePage() {
         className="relative flex items-center justify-center min-h-screen pt-18 overflow-hidden"
         style={{ backgroundImage: "var(--hero-bg)" }}
       >
-        <HeroBackground />
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="hero-grid" />
+          <div className="hero-glow" />
+          <div className="hero-vignette" />
+        </div>
         <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
           <p className="animate-fade-up text-gold text-xs tracking-[0.3em] uppercase mb-6 font-medium">
             RC 8551874

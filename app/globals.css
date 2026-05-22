@@ -85,9 +85,34 @@ body {
 }
 
 
-.animate-lines-drift {
+/* ─── Hero background (CSS-only, no JS) ─── */
+.hero-grid {
+  position: absolute;
+  top: -80px; left: -80px; right: -80px; bottom: -80px;
+  background-image: repeating-linear-gradient(135deg, transparent, transparent 38px, rgba(27,42,74,0.16) 38px, rgba(27,42,74,0.16) 39px);
+  background-size: 80px 80px;
   animation: lines-drift 5s linear infinite;
 }
+.dark .hero-grid {
+  background-image: repeating-linear-gradient(135deg, transparent, transparent 38px, rgba(50,110,200,0.1) 38px, rgba(50,110,200,0.1) 39px);
+}
+.hero-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 70% 55% at 50% 45%, rgba(184,150,46,0.18) 0%, transparent 70%);
+}
+.dark .hero-glow {
+  background: radial-gradient(ellipse 70% 55% at 50% 45%, rgba(20,60,160,0.22) 0%, transparent 70%);
+}
+.hero-vignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 62% 58% at 50% 48%, transparent 0%, rgba(255,255,255,0.45) 70%, rgba(255,255,255,0.82) 100%);
+}
+.dark .hero-vignette { display: none; }
+
+/* ─── Pause floating path animations when off-screen ─── */
+.fp-paused path { animation-play-state: paused; }
 
 .animate-fade-up {
   animation: fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
@@ -119,7 +144,6 @@ body {
   transform: translateY(18px) scale(0.997);
   transition: opacity 600ms cubic-bezier(0.22, 1, 0.36, 1),
               transform 600ms cubic-bezier(0.22, 1, 0.36, 1);
-  will-change: opacity, transform;
 }
 
 .card-animate.is-visible {
@@ -144,7 +168,6 @@ body {
   transform: translateY(22px);
   transition: opacity 700ms cubic-bezier(0.22, 1, 0.36, 1),
               transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
-  will-change: opacity, transform;
 }
 
 .section-reveal.is-visible {
@@ -155,3 +178,11 @@ body {
 .section-reveal.reveal-delay-1 { transition-delay: 90ms; }
 .section-reveal.reveal-delay-2 { transition-delay: 180ms; }
 .section-reveal.reveal-delay-3 { transition-delay: 270ms; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+  .card-animate, .section-reveal { opacity: 1; transform: none; }
+}
