@@ -15,8 +15,8 @@ export default function HeroBackground() {
 
   // Steel-blue lines on dark bg, navy lines on light bg
   const lineColor = isDark
-    ? "rgba(50, 110, 200, 0.22)"
-    : "rgba(27,42,74,0.32)";
+    ? "rgba(50, 110, 200, 0.15)"
+    : "rgba(27,42,74,0.22)";
 
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -32,7 +32,7 @@ export default function HeroBackground() {
           left: "-80px",
           right: "-80px",
           bottom: "-80px",
-          backgroundImage: `repeating-linear-gradient(135deg, transparent, transparent 37px, ${lineColor} 37px, ${lineColor} 39px)`,
+          backgroundImage: `repeating-linear-gradient(135deg, transparent, transparent 38px, ${lineColor} 38px, ${lineColor} 39px)`,
           backgroundSize: "80px 80px",
           animation: "lines-drift 5s linear infinite",
         }}
