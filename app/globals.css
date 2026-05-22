@@ -104,21 +104,6 @@ body {
   50%       { box-shadow: 0 0 20px rgba(80, 150, 255, 0.18); }
 }
 
-@keyframes paths-drift-a {
-  0%   { transform: translate(0px, 0px); }
-  25%  { transform: translate(14px, -8px); }
-  50%  { transform: translate(20px, 0px); }
-  75%  { transform: translate(14px, 8px); }
-  100% { transform: translate(0px, 0px); }
-}
-
-@keyframes paths-drift-b {
-  0%   { transform: translate(0px, 0px); }
-  25%  { transform: translate(-14px, 8px); }
-  50%  { transform: translate(-20px, 0px); }
-  75%  { transform: translate(-14px, -8px); }
-  100% { transform: translate(0px, 0px); }
-}
 
 .animate-lines-drift {
   animation: lines-drift 5s linear infinite;
