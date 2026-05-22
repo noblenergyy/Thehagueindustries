@@ -12,6 +12,8 @@ import {
 } from "lucide-react";
 import HeroBackground from "@/components/HeroBackground";
 import StatCounter from "@/components/StatCounter";
+import CyclingWord from "@/components/CyclingWord";
+import FloatingPathsBg from "@/components/FloatingPaths";
 
 export const metadata: Metadata = {
   title: "The Hague Industries Ltd | Multi-Sector Contracting & Advisory",
@@ -111,11 +113,14 @@ export default function HomePage() {
         <HeroBackground />
         <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
           <p className="animate-fade-up text-gold text-xs tracking-[0.3em] uppercase mb-6 font-medium">
-            RC 8551874 &nbsp;|&nbsp; Lagos &amp; Abuja,{" "}
-            <span className="text-[0.78em] tracking-[0.08em] font-light normal-case opacity-75">Nigeria</span>
+            RC 8551874
           </p>
           <h1 className="animate-fade-up delay-100 text-4xl sm:text-5xl md:text-6xl font-bold text-navy dark:text-white leading-tight mb-6">
-            Built for the Mandates That Matter.
+            Built for the Mandates That
+            <span className="relative flex justify-center overflow-hidden">
+              <span aria-hidden="true">&nbsp;</span>
+              <CyclingWord />
+            </span>
           </h1>
           <p className="animate-fade-up delay-200 text-navy/65 dark:text-white/75 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
             The Hague Industries Ltd operates at the convergence of government,
@@ -142,8 +147,9 @@ export default function HomePage() {
       </section>
 
       {/* VALUE PROPOSITION STRIP */}
-      <section className="bg-navy border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <section className="relative bg-navy border-t border-white/10 overflow-hidden">
+        <FloatingPathsBg />
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {valuePillars.map((p, i) => (
               <div key={p.title} className={`flex items-start gap-4 animate-fade-up delay-${(i + 1) * 100}`}>
@@ -217,9 +223,9 @@ export default function HomePage() {
                 time. From general contracting and remediation to B2B
                 partnerships and government advisory, we operate wherever our
                 clients need us, with the compliance infrastructure to match.
-              </p>what 
+              </p>
               <p className="text-gold font-semibold italic text-lg mb-6">
-                &ldquo;Our vision is transnational. Our execution is local. Our
+                &ldquo;Our mandate is continental. Our execution is exact. Our
                 standard is non-negotiable.&rdquo;
               </p>
               <Link
@@ -300,8 +306,9 @@ export default function HomePage() {
       </section>
 
       {/* CTA BAND */}
-      <section className="bg-navy py-20">
-        <div className="max-w-3xl mx-auto px-4 text-center">
+      <section className="relative bg-navy py-20 overflow-hidden">
+        <FloatingPathsBg />
+        <div className="relative z-10 max-w-3xl mx-auto px-4 text-center">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
             Ready to Work With a Partner Who Delivers?
           </h2>

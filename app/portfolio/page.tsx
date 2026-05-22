@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import FloatingPathsBg from "@/components/FloatingPaths";
 
 const projects = [
   {
@@ -72,12 +73,13 @@ export default function PortfolioPage() {
     <>
       {/* PAGE HERO */}
       <section
-        className="pt-32 pb-20 px-4"
+        className="relative pt-32 pb-20 px-4 overflow-hidden"
         style={{
           backgroundImage: "linear-gradient(135deg, #0d1a30 0%, #1B2A4A 100%)",
         }}
       >
-        <div className="max-w-4xl mx-auto text-center">
+        <FloatingPathsBg />
+        <div className="relative z-10 max-w-4xl mx-auto text-center">
           <p className="text-gold text-xs uppercase tracking-widest font-medium mb-3">
             Track Record
           </p>
@@ -159,8 +161,9 @@ export default function PortfolioPage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-navy py-20 text-center">
-        <div className="max-w-2xl mx-auto px-4">
+      <section className="relative bg-navy py-20 text-center overflow-hidden">
+        <FloatingPathsBg />
+        <div className="relative z-10 max-w-2xl mx-auto px-4">
           <h2 className="text-3xl font-bold text-white mb-4">
             Have a Project in Mind? Let Us Deliver It.
           </h2>

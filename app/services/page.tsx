@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import FloatingPathsBg from "@/components/FloatingPaths";
 import {
   CheckCircle2,
   Landmark,
@@ -54,12 +55,13 @@ export default function ServicesPage() {
     <>
       {/* PAGE HERO */}
       <section
-        className="pt-32 pb-20 px-4"
+        className="relative pt-32 pb-20 px-4 overflow-hidden"
         style={{
           backgroundImage: "linear-gradient(135deg, #0d1a30 0%, #1B2A4A 100%)",
         }}
       >
-        <div className="max-w-4xl mx-auto text-center">
+        <FloatingPathsBg />
+        <div className="relative z-10 max-w-4xl mx-auto text-center">
           <p className="text-gold text-xs uppercase tracking-widest font-medium mb-3">
             Our Capabilities
           </p>

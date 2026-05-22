@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Mail, MapPin, Building2, CheckCircle2 } from "lucide-react";
+import FloatingPathsBg from "@/components/FloatingPaths";
 
 const WEB3FORMS_KEY = "c528ab39-72d9-4a5f-87d2-7bea877d6edb";
 
@@ -70,12 +71,13 @@ export default function ContactPage() {
     <>
       {/* PAGE HERO */}
       <section
-        className="pt-32 pb-20 px-4"
+        className="relative pt-32 pb-20 px-4 overflow-hidden"
         style={{
           backgroundImage: "linear-gradient(135deg, #0d1a30 0%, #1B2A4A 100%)",
         }}
       >
-        <div className="max-w-4xl mx-auto text-center">
+        <FloatingPathsBg />
+        <div className="relative z-10 max-w-4xl mx-auto text-center">
           <p className="text-gold text-xs uppercase tracking-widest font-medium mb-3">
             Reach Out
           </p>

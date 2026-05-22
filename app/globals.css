@@ -8,8 +8,8 @@
   --color-brand-bg: #F2F4F7;
   --color-body-text: #4A4A4A;
   --color-white: #FFFFFF;
-  --color-dark-page: #040f1d;
-  --color-dark-card: #0a1c30;
+  --color-dark-page: #020609;
+  --color-dark-card: #060f1a;
 
   --font-sans: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
 }
@@ -29,26 +29,31 @@ body {
 }
 
 .dark {
-  --color-brand-bg: #061320;
-  --color-body-text: #7a9abb;
-  --color-dark-page: #040f1d;
-  --color-dark-card: #0a1c30;
-  --hero-bg: linear-gradient(135deg, #020a14 0%, #040e1c 60%, #071626 100%);
+  /* Replace gold/yellow with steel blue for text and icons */
+  --color-gold: #8fb8d8;
+  --color-brand-bg: #030c16;
+  --color-body-text: #6e94b2;
+  --color-dark-page: #020609;
+  --color-dark-card: #060f1a;
+  --hero-bg: linear-gradient(135deg, #010306 0%, #020810 60%, #040c18 100%);
+}
+
+/* Restore actual gold for CTA button backgrounds in dark mode */
+.dark .bg-gold {
+  background-color: #B8962E !important;
+}
+.dark .hover\:bg-gold:hover {
+  background-color: #B8962E !important;
 }
 
 .dark body {
-  background-color: #040f1d;
-  color: #7a9abb;
+  background-color: #020609;
+  color: #6e94b2;
 }
 
-/* Dark mode: steel-blue text accent instead of yellow/gold */
-.dark .text-gold {
-  color: #a8c8e8;
-}
-
-/* Dark mode navbar — deep glass panel */
+/* Dark mode navbar — near-black glass panel */
 .dark header {
-  background-color: rgba(2, 8, 18, 0.94);
+  background-color: rgba(1, 3, 7, 0.96) !important;
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);

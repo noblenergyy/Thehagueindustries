@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Fuel, Landmark, Activity, Pickaxe, Monitor } from "lucide-react";
+import FloatingPathsBg from "@/components/FloatingPaths";
 
 export const metadata: Metadata = {
   title: "About Us",
@@ -57,12 +58,13 @@ export default function AboutPage() {
     <>
       {/* PAGE HERO */}
       <section
-        className="pt-32 pb-20 px-4"
+        className="relative pt-32 pb-20 px-4 overflow-hidden"
         style={{
           backgroundImage: "linear-gradient(135deg, #0d1a30 0%, #1B2A4A 100%)",
         }}
       >
-        <div className="max-w-4xl mx-auto text-center">
+        <FloatingPathsBg />
+        <div className="relative z-10 max-w-4xl mx-auto text-center">
           <p className="text-gold text-xs uppercase tracking-widest font-medium mb-3">
             Who We Are
           </p>
@@ -98,8 +100,8 @@ export default function AboutPage() {
             to every engagement, regardless of size or sector.
           </p>
           <p className="text-gold font-semibold italic text-xl mt-6">
-            &ldquo;Our vision is transnational. Our execution is local. Our
-            standard is non-negotiable.&rdquo;
+            &ldquo;Our mandate is transnational. Our execution is exact. Our
+            standard is uncompromising.&rdquo;
           </p>
         </div>
       </section>
@@ -232,8 +234,9 @@ export default function AboutPage() {
       </section>
 
       {/* SECTORS / REACH */}
-      <section className="bg-navy py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative bg-navy py-20 overflow-hidden">
+        <FloatingPathsBg />
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <p className="text-gold text-xs uppercase tracking-widest font-medium mb-2">
               Areas of Operation

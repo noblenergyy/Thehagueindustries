@@ -16,7 +16,7 @@ export default function HeroBackground() {
   // Steel-blue lines on dark bg, navy lines on light bg
   const lineColor = isDark
     ? "rgba(50, 110, 200, 0.1)"
-    : "rgba(27,42,74,0.14)";
+    : "rgba(27,42,74,0.16)";
 
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -47,6 +47,17 @@ export default function HeroBackground() {
             : "radial-gradient(ellipse 70% 55% at 50% 45%, rgba(184,150,46,0.18) 0%, transparent 70%)",
         }}
       />
+      {/* Light mode: white glow from the edges (vignette) */}
+      {!isDark && (
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            background:
+              "radial-gradient(ellipse 62% 58% at 50% 48%, transparent 0%, rgba(255,255,255,0.45) 70%, rgba(255,255,255,0.82) 100%)",
+          }}
+        />
+      )}
     </div>
   );
 }
