@@ -105,13 +105,19 @@ body {
 }
 
 @keyframes paths-drift-a {
-  0%   { transform: translate(0, 0); }
-  100% { transform: translate(28px, 20px); }
+  0%   { transform: translate(0px, 0px); }
+  25%  { transform: translate(14px, -8px); }
+  50%  { transform: translate(20px, 0px); }
+  75%  { transform: translate(14px, 8px); }
+  100% { transform: translate(0px, 0px); }
 }
 
 @keyframes paths-drift-b {
-  0%   { transform: translate(0, 0); }
-  100% { transform: translate(-28px, -20px); }
+  0%   { transform: translate(0px, 0px); }
+  25%  { transform: translate(-14px, 8px); }
+  50%  { transform: translate(-20px, 0px); }
+  75%  { transform: translate(-14px, -8px); }
+  100% { transform: translate(0px, 0px); }
 }
 
 .animate-lines-drift {

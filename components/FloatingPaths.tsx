@@ -9,7 +9,7 @@ function FloatingPaths({ position }: { position: number }) {
       684 - i * 10 * position
     } ${875 - i * 12} ${684 - i * 10 * position} ${875 - i * 12}`,
     width: 0.5 + i * 0.04,
-    opacity: Math.min(0.08 + i * 0.02, 0.26),
+    opacity: Math.min(0.15 + i * 0.025, 0.55),
   }));
 
   const anim = position > 0 ? "paths-drift-a" : "paths-drift-b";
@@ -17,11 +17,11 @@ function FloatingPaths({ position }: { position: number }) {
   return (
     <div
       className="absolute inset-0 pointer-events-none"
-      style={{ animation: `${anim} 45s ease-in-out infinite alternate` }}
+      style={{ animation: `${anim} 15s linear infinite`, willChange: "transform" }}
     >
       <svg
         className="w-full h-full"
-        style={{ color: "#c9a535" }}
+        style={{ color: "#000000" }}
         viewBox="0 0 696 316"
         fill="none"
         preserveAspectRatio="xMidYMid slice"
