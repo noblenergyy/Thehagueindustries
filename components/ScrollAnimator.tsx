@@ -1,8 +1,11 @@
 "use client";
 
 import { useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 export default function ScrollAnimator() {
+  const pathname = usePathname();
+
   useEffect(() => {
     const vh = window.innerHeight;
     const belowFold = (el: HTMLElement) =>
@@ -64,7 +67,7 @@ export default function ScrollAnimator() {
 
     targets.forEach((el) => obs.observe(el));
     return () => obs.disconnect();
-  }, []);
+  }, [pathname]);
 
   return null;
 }

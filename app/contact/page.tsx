@@ -78,13 +78,13 @@ export default function ContactPage() {
       >
         <FloatingPathsBg />
         <div className="relative z-10 max-w-4xl mx-auto text-center">
-          <p className="text-gold text-xs uppercase tracking-widest font-medium mb-3">
+          <p className="animate-fade-up text-gold text-xs uppercase tracking-widest font-medium mb-3">
             Reach Out
           </p>
-          <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">
+          <h1 className="animate-fade-up delay-100 text-4xl sm:text-5xl font-bold text-white mb-4">
             Get In Touch
           </h1>
-          <p className="text-white/70 text-lg max-w-2xl mx-auto">
+          <p className="animate-fade-up delay-200 text-white/70 text-lg max-w-2xl mx-auto">
             Whether it is a project, a partnership, or an enquiry. We would
             like to hear from you.
           </p>
