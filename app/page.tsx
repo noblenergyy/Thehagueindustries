@@ -112,9 +112,6 @@ export default function HomePage() {
       >
         <HeroBackground />
         <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
-          <p className="animate-fade-up text-gold text-xs tracking-[0.3em] uppercase mb-6 font-medium">
-            RC 8551874
-          </p>
           <h1 className="animate-fade-up delay-100 text-4xl sm:text-5xl md:text-6xl font-bold text-navy dark:text-white leading-tight mb-6">
             Built for the Mandates That
             <span className="relative flex justify-center overflow-hidden">
