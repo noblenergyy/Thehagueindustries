@@ -6,7 +6,7 @@ import FloatingPathsBg from "@/components/FloatingPaths";
 export const metadata: Metadata = {
   title: "About Us",
   description:
-    "The Hague Industries Ltd (RC 8551874) was incorporated in June 2025 under CAMA 2020. Learn about our leadership, vision, mission, and operations across Nigeria's oil & gas, government, and mining sectors.",
+    "The Hague Industries Ltd — incorporated June 2025. Learn about our leadership, vision, mission, and operations across oil & gas, government, mining, and digitalization sectors.",
   alternates: {
     canonical: "https://thehagueindustries.com/about",
   },

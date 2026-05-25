@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     template: "%s | The Hague Industries Ltd",
   },
   description:
-    "The Hague Industries Ltd (RC 8551874) is a CAC-registered Nigerian contracting, consultancy, and advisory company serving government MDAs, oil & gas, mining, and corporate clients nationwide.",
+    "The Hague Industries Ltd is a multi-sector contracting, consultancy, and advisory firm. Serving government, oil & gas, mining, and corporate clients across West Africa.",
   keywords: [
     "The Hague Industries",
     "The Hague Industries Ltd",
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "The Hague Industries Ltd | Multi-Sector Contracting & Advisory",
     description:
-      "CAC-registered Nigerian contracting and advisory company. Oil & gas, government, mining, and B2B sectors. RC 8551874.",
+      "Multi-sector contracting and advisory firm. Oil & gas, government, mining, and B2B sectors across West Africa.",
     type: "website",
     locale: "en_NG",
     url: "https://thehagueindustries.com",
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     card: "summary",
     title: "The Hague Industries Ltd",
     description:
-      "CAC-registered Nigerian contracting and advisory company. Oil & gas, government, mining, and B2B sectors.",
+      "Multi-sector contracting and advisory firm. Oil & gas, government, mining, and B2B sectors across West Africa.",
   },
   robots: {
     index: true,
@@ -73,7 +73,7 @@ const organizationSchema = {
   url: "https://thehagueindustries.com",
   logo: "https://thehagueindustries.com/opengraph-image.png",
   description:
-    "CAC-registered Nigerian contracting, consultancy, and advisory company. Serving government MDAs, oil & gas, mining, and corporate clients nationwide.",
+    "Multi-sector contracting, consultancy, and advisory firm. Serving government, oil & gas, mining, and corporate clients across West Africa.",
   foundingDate: "2025",
   legalName: "The Hague Industries Ltd",
   vatID: "33277749-0001",

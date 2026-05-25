@@ -18,7 +18,7 @@ import FloatingPathsBg from "@/components/FloatingPaths";
 export const metadata: Metadata = {
   title: "The Hague Industries Ltd | Multi-Sector Contracting & Advisory",
   description:
-    "CAC-registered Nigerian contracting, consultancy, and advisory company. Serving government MDAs, oil & gas, mining, and corporate clients nationwide.",
+    "The Hague Industries Ltd — multi-sector contracting, consultancy, and advisory. Delivering across government, oil & gas, mining, and B2B sectors.",
 };
 
 const valuePillars = [
@@ -72,13 +72,6 @@ const serviceCards = [
 ];
 
 const featuredProjects = [
-  {
-    title: "Supply Agreement: Rainoil Limited",
-    client: "Rainoil Ltd",
-    sector: "Oil & Gas",
-    outcome: "Completed",
-    desc: "Executed a commercial supply agreement including issuance of a Bill of Collection for oil & gas product supply.",
-  },
   {
     title: "Enugu Digital Economy Portal Proposal",
     client: "Enugu State Government",

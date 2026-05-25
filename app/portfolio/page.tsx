@@ -6,14 +6,6 @@ import FloatingPathsBg from "@/components/FloatingPaths";
 
 const projects = [
   {
-    title: "Downstream Supply Agreement",
-    client: "Rainoil Ltd",
-    sector: "Oil & Gas",
-    year: "2026",
-    status: "Completed",
-    desc: "Structured and executed a commercial supply agreement with Rainoil Limited for oil & gas product supply, including issuance of a formal Bill of Collection. The engagement demonstrated The Hague Industries' capacity to perform in the downstream petroleum sector with full documentation and regulatory compliance.",
-  },
-  {
     title: "Enugu Digital Economy Portal: State Government Proposal",
     client: "Enugu State Government",
     sector: "Government",
