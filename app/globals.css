@@ -5,13 +5,15 @@
 @theme {
   --color-navy: #1B2A4A;
   --color-gold: #B8962E;
-  --color-brand-bg: #F2F4F7;
+  --color-brand-bg: #F3F0E8;
+  --color-paper: #FBFAF6;
   --color-body-text: #4A4A4A;
   --color-white: #FFFFFF;
-  --color-dark-page: #020609;
-  --color-dark-card: #060f1a;
+  --color-dark-page: #0A1428;
+  --color-dark-card: #101E3A;
 
   --font-sans: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-fraunces), Georgia, "Times New Roman", serif;
 }
 
 html {
@@ -19,31 +21,30 @@ html {
 }
 
 body {
-  background-color: #FFFFFF;
+  background-color: #FBFAF6;
   color: #4A4A4A;
   font-family: var(--font-sans);
 }
 
 :root {
-  --hero-bg: linear-gradient(135deg, #eef1f6 0%, #dde5f0 55%, #cfd9ea 100%);
+  --hero-bg: linear-gradient(165deg, #FCFBF8 0%, #F5F2EA 55%, #EDE8DB 100%);
+  --hero-lines: rgba(27, 42, 74, 0.16);
+  --hero-columns: rgba(184, 150, 46, 0.12);
+  --hero-glow: radial-gradient(ellipse 60% 50% at 38% 44%, rgba(184, 150, 46, 0.20) 0%, transparent 70%);
 }
 
 .dark {
-  /* Replace gold/yellow with steel blue for text and icons */
-  --color-gold: #8fb8d8;
-  --color-brand-bg: #030c16;
-  --color-body-text: #6e94b2;
-  --color-dark-page: #020609;
-  --color-dark-card: #060f1a;
-  --hero-bg: linear-gradient(135deg, #010306 0%, #020810 60%, #040c18 100%);
-}
-
-/* Restore actual gold for CTA button backgrounds in dark mode */
-.dark .bg-gold {
-  background-color: #B8962E !important;
-}
-.dark .hover\:bg-gold:hover {
-  background-color: #B8962E !important;
+  /* Deep navy dark mode with the brand gold kept (slightly brightened for contrast) */
+  --color-gold: #C9A83D;
+  --color-brand-bg: #0D1B36;
+  --color-paper: #0A1428;
+  --color-body-text: #93A5C4;
+  --color-dark-page: #0A1428;
+  --color-dark-card: #101E3A;
+  --hero-bg: linear-gradient(135deg, #0A1428 0%, #0D1B36 55%, #12234A 100%);
+  --hero-lines: rgba(201, 168, 61, 0.15);
+  --hero-columns: rgba(201, 168, 61, 0.08);
+  --hero-glow: radial-gradient(ellipse 60% 50% at 38% 44%, rgba(201, 168, 61, 0.14) 0%, transparent 70%);
 }
 
 .dark body {
@@ -109,8 +110,10 @@ body {
 .delay-700 { animation-delay: 700ms; }
 .delay-800 { animation-delay: 800ms; }
 
-/* ─── Card scroll-reveal ─── */
-.card-animate {
+/* ─── Card scroll-reveal ───
+   Hidden-until-revealed styles are gated on the `js` class (set by the inline
+   theme script) so content is never permanently invisible if scripts fail. */
+.js .card-animate {
   opacity: 0;
   transform: translateY(18px) scale(0.997);
   transition: opacity 600ms cubic-bezier(0.22, 1, 0.36, 1),
@@ -135,7 +138,7 @@ body {
 }
 
 /* ─── Section heading reveal ─── */
-.section-reveal {
+.js .section-reveal {
   opacity: 0;
   transform: translateY(22px);
   transition: opacity 700ms cubic-bezier(0.22, 1, 0.36, 1),
@@ -151,3 +154,28 @@ body {
 .section-reveal.reveal-delay-1 { transition-delay: 90ms; }
 .section-reveal.reveal-delay-2 { transition-delay: 180ms; }
 .section-reveal.reveal-delay-3 { transition-delay: 270ms; }
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ─── Editorial details ─── */
+.dropcap::first-letter {
+  font-family: var(--font-serif);
+  font-size: 3.4em;
+  line-height: 0.82;
+  float: left;
+  padding-right: 0.14em;
+  padding-top: 0.08em;
+  color: var(--color-navy);
+}
+
+.dark .dropcap::first-letter {
+  color: #ffffff;
+}

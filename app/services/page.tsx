@@ -1,28 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import FloatingPathsBg from "@/components/FloatingPaths";
-import {
-  CheckCircle2,
-  Landmark,
-  MapPin,
-  RefreshCw,
-  ClipboardList,
-  Users,
-  Fuel,
-  Activity,
-  Pickaxe,
-  Monitor,
-  HardHat,
-  Package,
-  Leaf,
-  Building2,
-  BarChart2,
-  FileText,
-  Link2,
-  UserCheck,
-  Globe,
-  Truck,
-} from "lucide-react";
+import Image from "next/image";
+import { ArrowRight } from "lucide-react";
+import Eyebrow from "@/components/Eyebrow";
+import { CornerBrackets, CurveFlourish } from "@/components/Ornaments";
 
 export const metadata: Metadata = {
   title: "Services",
@@ -34,20 +15,114 @@ export const metadata: Metadata = {
 };
 
 const differentiators = [
-  { Icon: CheckCircle2, text: "CAC-registered & compliance-driven" },
-  { Icon: Landmark, text: "Proven public sector track record" },
-  { Icon: MapPin, text: "Nationwide operational reach" },
-  { Icon: RefreshCw, text: "Multi-sector flexibility" },
-  { Icon: ClipboardList, text: "Secretary-governed & audit-ready" },
-  { Icon: Users, text: "Established B2B partnership network" },
+  "CAC-registered & compliance-driven",
+  "Proven public sector track record",
+  "Nationwide operational reach",
+  "Multi-sector flexibility",
+  "Secretary-governed & audit-ready",
+  "Established B2B partnership network",
 ];
 
 const sectors = [
-  { label: "Oil & Gas", Icon: Fuel },
-  { label: "Government & Public Sector", Icon: Landmark },
-  { label: "Healthcare", Icon: Activity },
-  { label: "Mining & Resources", Icon: Pickaxe },
-  { label: "Technology & Digitalization", Icon: Monitor },
+  "Oil & Gas",
+  "Government & Public Sector",
+  "Healthcare",
+  "Mining & Resources",
+  "Technology & Digitalization",
+];
+
+const serviceLines = [
+  {
+    id: "contracting",
+    index: "01",
+    title: "General Contracting & Remediation",
+    accent: "Remediation",
+    lead: "General Contracting &",
+    desc: "We take full responsibility for the performance of contracts across civil, infrastructure, supply, and remediation mandates. From initial scoping to final delivery, we manage execution with precision and accountability.",
+    image: "/images/site-workers.jpg",
+    alt: "Workers on an active construction site",
+    cta: { label: "Enquire About This Service", href: "/contact?subject=Service Request" },
+    capabilities: [
+      {
+        title: "Civil & Infrastructure Works",
+        desc: "End-to-end project delivery for civil and infrastructure mandates.",
+      },
+      {
+        title: "Supply & Procurement",
+        desc: "Strategic sourcing and supply chain execution for complex requirements.",
+      },
+      {
+        title: "Site Remediation",
+        desc: "Environmental and site remediation in compliance with regulatory standards.",
+      },
+      {
+        title: "Facility Management",
+        desc: "Operational facility management for institutional and corporate clients.",
+      },
+    ],
+  },
+  {
+    id: "consultancy",
+    index: "02",
+    title: "Consultancy",
+    lead: "",
+    accent: "Consultancy",
+    desc: "Our advisory arm delivers strategic, regulatory, and operational guidance to organisations navigating complex environments, from government relations to project governance and compliance structuring.",
+    image: "/images/boardroom.jpg",
+    alt: "Advisors taking notes during a working session",
+    cta: { label: "Enquire About This Service", href: "/contact?subject=Service Request" },
+    capabilities: [
+      {
+        title: "Strategy & Business Advisory",
+        desc: "Actionable strategic guidance for organisations navigating growth and change.",
+      },
+      {
+        title: "Compliance & Regulatory Consulting",
+        desc: "Regulatory mapping and compliance structuring across Nigerian and ECOWAS frameworks.",
+      },
+      {
+        title: "Project Management",
+        desc: "Professional oversight of complex multi-stakeholder projects from initiation to close.",
+      },
+      {
+        title: "Government Affairs",
+        desc: "Facilitating productive engagement between private interests and public institutions.",
+      },
+    ],
+  },
+  {
+    id: "b2b",
+    index: "03",
+    title: "B2B Solutions",
+    lead: "B2B",
+    accent: "Solutions",
+    desc: "We engage directly with corporate counterparts to structure supply agreements, joint ventures, and vendor partnerships. If your organisation needs a reliable, registered Nigerian counterpart for B2B transactions, The Hague Industries is the partner to call.",
+    image: "/images/port.jpg",
+    alt: "Container ships and cranes at a commercial port",
+    cta: { label: "Submit a B2B Enquiry", href: "/contact?subject=B2B Partnership" },
+    capabilities: [
+      {
+        title: "B2B Supply Agreements",
+        desc: "Structuring and executing commercial supply agreements between corporate entities with full regulatory compliance.",
+      },
+      {
+        title: "Joint Venture Structuring",
+        desc: "Legal and strategic structuring of joint ventures for project-specific or long-term business objectives.",
+      },
+      {
+        title: "Vendor / Sub-contractor Engagement",
+        desc: "Identifying, vetting, and contracting qualified vendors and sub-contractors for project delivery.",
+      },
+      {
+        title: "Cross-Border Trade Facilitation",
+        desc: "Structuring distribution and supply arrangements across jurisdictions, including sole distributor agreements and market entry frameworks for international principals.",
+      },
+      {
+        title: "Supply Facilitation",
+        desc: "End-to-end management of supply mandates between corporate counterparts, from agreement structuring through to delivery and documentation.",
+      },
+    ],
+  },
 ];
 
 export default function ServicesPage() {
@@ -55,307 +130,211 @@ export default function ServicesPage() {
     <>
       {/* PAGE HERO */}
       <section
-        className="relative pt-32 pb-20 px-4 overflow-hidden"
-        style={{
-          backgroundImage: "linear-gradient(135deg, #0d1a30 0%, #1B2A4A 100%)",
-        }}
+        className="relative pt-40 pb-16 overflow-hidden"
+        style={{ backgroundImage: "var(--hero-bg)" }}
       >
-        <FloatingPathsBg />
-        <div className="relative z-10 max-w-4xl mx-auto text-center">
-          <p className="animate-fade-up text-gold text-xs uppercase tracking-widest font-medium mb-3">
-            Our Capabilities
-          </p>
-          <h1 className="animate-fade-up delay-100 text-4xl sm:text-5xl font-bold text-white mb-4">
-            What We Do
-          </h1>
-          <p className="animate-fade-up delay-200 text-white/70 text-lg max-w-2xl mx-auto">
-            We operate across a focused but versatile set of service lines,
-            structured to meet the demands of government procurement, private
-            sector growth, and cross-border B2B transactions.
-          </p>
-        </div>
-      </section>
-
-      {/* GENERAL CONTRACTING */}
-      <section id="contracting" className="bg-white dark:bg-dark-page py-20 scroll-mt-18">
+        <CurveFlourish className="absolute -top-8 right-0 w-[340px] sm:w-[440px] text-gold" flip />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-            <div>
-              <p className="text-gold text-xs uppercase tracking-widest font-medium mb-2">
-                Service Line 01
-              </p>
-              <h2 className="text-3xl font-bold text-navy dark:text-white mb-4">
-                General Contracting &amp; Remediation
-              </h2>
-              <p className="text-body-text leading-relaxed mb-6">
-                We take full responsibility for the performance of contracts
-                across civil, infrastructure, supply, and remediation mandates.
-                From initial scoping to final delivery, we manage execution with
-                precision and accountability.
-              </p>
-              <Link
-                href="/contact?subject=Service Request"
-                className="inline-block px-7 py-3 rounded bg-navy text-white text-sm font-semibold hover:brightness-110 transition-all"
-              >
-                Enquire About This Service
-              </Link>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-end pb-14">
+            <div className="lg:col-span-7">
+              <Eyebrow className="animate-fade-up mb-7">Our Capabilities</Eyebrow>
+              <h1 className="animate-fade-up delay-100 font-serif text-5xl sm:text-6xl text-navy dark:text-white leading-[1.05]">
+                What <span className="italic text-gold">We Do</span>
+              </h1>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {[
-                {
-                  Icon: HardHat,
-                  title: "Civil & Infrastructure Works",
-                  desc: "End-to-end project delivery for civil and infrastructure mandates.",
-                },
-                {
-                  Icon: Package,
-                  title: "Supply & Procurement",
-                  desc: "Strategic sourcing and supply chain execution for complex requirements.",
-                },
-                {
-                  Icon: Leaf,
-                  title: "Site Remediation",
-                  desc: "Environmental and site remediation in compliance with regulatory standards.",
-                },
-                {
-                  Icon: Building2,
-                  title: "Facility Management",
-                  desc: "Operational facility management for institutional and corporate clients.",
-                },
-              ].map((item) => (
-                <div
-                  key={item.title}
-                  className="bg-brand-bg dark:bg-dark-card rounded-lg p-5 border border-gray-100 dark:border-white/10"
-                >
-                  <item.Icon size={22} className="text-gold mb-2" />
-                  <h3 className="font-bold text-navy dark:text-white text-sm mb-1">
-                    {item.title}
-                  </h3>
-                  <p className="text-body-text text-xs leading-relaxed">
-                    {item.desc}
-                  </p>
-                </div>
-              ))}
+            <div className="lg:col-span-5">
+              <p className="animate-fade-up delay-200 text-body-text dark:text-white/65 text-lg leading-relaxed lg:border-l lg:border-gold/50 lg:pl-8">
+                A focused but versatile set of service lines, structured to meet
+                the demands of government procurement, private sector growth,
+                and cross-border B2B transactions.
+              </p>
             </div>
           </div>
         </div>
-      </section>
-
-      {/* CONSULTANCY */}
-      <section id="consultancy" className="bg-brand-bg py-20 scroll-mt-18">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-            <div>
-              <p className="text-gold text-xs uppercase tracking-widest font-medium mb-2">
-                Service Line 02
-              </p>
-              <h2 className="text-3xl font-bold text-navy dark:text-white mb-4">
-                Consultancy
-              </h2>
-              <p className="text-body-text leading-relaxed mb-6">
-                Our advisory arm delivers strategic, regulatory, and operational
-                guidance to organisations navigating complex environments, from
-                government relations to project governance and compliance
-                structuring.
-              </p>
-              <Link
-                href="/contact?subject=Service Request"
-                className="inline-block px-7 py-3 rounded bg-navy text-white text-sm font-semibold hover:brightness-110 transition-all"
-              >
-                Enquire About This Service
-              </Link>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {[
-                {
-                  Icon: BarChart2,
-                  title: "Strategy & Business Advisory",
-                  desc: "Actionable strategic guidance for organisations navigating growth and change.",
-                },
-                {
-                  Icon: FileText,
-                  title: "Compliance & Regulatory Consulting",
-                  desc: "Regulatory mapping and compliance structuring across Nigerian and ECOWAS frameworks.",
-                },
-                {
-                  Icon: ClipboardList,
-                  title: "Project Management",
-                  desc: "Professional oversight of complex multi-stakeholder projects from initiation to close.",
-                },
-                {
-                  Icon: Landmark,
-                  title: "Government Affairs",
-                  desc: "Facilitating productive engagement between private interests and public institutions.",
-                },
-              ].map((item) => (
-                <div
-                  key={item.title}
-                  className="bg-white dark:bg-dark-card rounded-lg p-5 border border-gray-100 dark:border-white/10 shadow-sm"
-                >
-                  <item.Icon size={22} className="text-gold mb-2" />
-                  <h3 className="font-bold text-navy dark:text-white text-sm mb-1">
-                    {item.title}
-                  </h3>
-                  <p className="text-body-text text-xs leading-relaxed">
-                    {item.desc}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
+        <div className="relative h-64 sm:h-80 lg:h-96 animate-fade-in delay-300">
+          <Image
+            src="/images/construction.jpg"
+            alt="Project team overseeing a large construction site"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-navy/25" aria-hidden="true" />
         </div>
       </section>
 
-      {/* B2B SOLUTIONS */}
-      <section id="b2b" className="bg-white dark:bg-dark-page py-20 scroll-mt-18">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-            <div>
-              <p className="text-gold text-xs uppercase tracking-widest font-medium mb-2">
-                Service Line 03
-              </p>
-              <h2 className="text-3xl font-bold text-navy dark:text-white mb-4">
-                B2B Solutions
-              </h2>
-              <p className="text-body-text leading-relaxed mb-4">
-                We engage directly with corporate counterparts to structure
-                supply agreements, joint ventures, and vendor partnerships. If
-                your organisation needs a reliable, registered Nigerian
-                counterpart for B2B transactions, The Hague Industries is the
-                partner to call.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-3">
+      {/* SERVICE LINES */}
+      {serviceLines.map((s, idx) => (
+        <section
+          key={s.id}
+          id={s.id}
+          className={`py-24 lg:py-32 scroll-mt-18 border-t border-navy/10 dark:border-white/10 ${
+            idx % 2 === 0
+              ? "bg-paper dark:bg-dark-page"
+              : "bg-brand-bg dark:bg-dark-page"
+          }`}
+        >
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-14 items-start">
+              {/* Copy */}
+              <div
+                className={`lg:col-span-5 section-reveal ${
+                  idx % 2 === 1 ? "lg:order-2" : ""
+                }`}
+              >
+                <Eyebrow className="mb-6">Service Line {s.index}</Eyebrow>
+                <h2 className="font-serif text-4xl text-navy dark:text-white leading-tight mb-6">
+                  {s.lead && <>{s.lead} </>}
+                  <span className="italic text-gold">{s.accent}</span>
+                </h2>
+                <p className="text-body-text dark:text-white/60 leading-loose mb-9">
+                  {s.desc}
+                </p>
                 <Link
-                  href="/contact?subject=B2B Partnership"
-                  className="inline-block px-7 py-3 rounded bg-gold text-navy text-sm font-bold hover:brightness-110 transition-all"
+                  href={s.cta.href}
+                  className="inline-block px-8 py-3.5 bg-navy text-white dark:bg-gold dark:text-navy text-[11px] uppercase tracking-[0.22em] font-bold hover:brightness-110 transition-all"
                 >
-                  Submit a B2B Enquiry
-                </Link>
-                <Link
-                  href="/contact?subject=Service Request"
-                  className="inline-block px-7 py-3 rounded border-2 border-navy dark:border-gold text-navy dark:text-gold text-sm font-semibold hover:bg-navy hover:text-white dark:hover:bg-gold dark:hover:text-navy transition-all"
-                >
-                  General Enquiry
+                  {s.cta.label}
                 </Link>
               </div>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {[
-                {
-                  Icon: FileText,
-                  title: "B2B Supply Agreements",
-                  desc: "Structuring and executing commercial supply agreements between corporate entities with full regulatory compliance.",
-                },
-                {
-                  Icon: Link2,
-                  title: "Joint Venture Structuring",
-                  desc: "Legal and strategic structuring of joint ventures for project-specific or long-term business objectives.",
-                },
-                {
-                  Icon: UserCheck,
-                  title: "Vendor / Sub-contractor Engagement",
-                  desc: "Identifying, vetting, and contracting qualified vendors and sub-contractors for project delivery.",
-                },
-                {
-                  Icon: Globe,
-                  title: "Cross-Border Trade Facilitation",
-                  desc: "Structuring distribution and supply arrangements across jurisdictions, including sole distributor agreements and market entry frameworks for international principals.",
-                },
-                {
-                  Icon: Truck,
-                  title: "Supply Facilitation",
-                  desc: "End-to-end management of supply mandates between corporate counterparts, from agreement structuring through to delivery and documentation.",
-                },
-              ].map((item) => (
-                <div
-                  key={item.title}
-                  className="flex gap-4 bg-brand-bg dark:bg-dark-card rounded-lg p-5 border border-gray-100 dark:border-white/10"
-                >
-                  <item.Icon
-                    size={22}
-                    className="text-gold mt-0.5 shrink-0"
+
+              {/* Image + capability index */}
+              <div
+                className={`lg:col-span-7 section-reveal reveal-delay-1 ${
+                  idx % 2 === 1 ? "lg:order-1" : ""
+                }`}
+              >
+                <div className={`relative mb-14 ${idx % 2 === 1 ? "ml-5 mt-5" : "mr-5 mt-5"}`}>
+                  <div
+                    aria-hidden="true"
+                    className={`absolute -top-5 border border-gold/50 ${
+                      idx % 2 === 1
+                        ? "-left-5 right-5 bottom-5"
+                        : "left-5 -right-5 bottom-5"
+                    }`}
                   />
-                  <div>
-                    <h3 className="font-bold text-navy dark:text-white text-sm mb-1">
-                      {item.title}
-                    </h3>
-                    <p className="text-body-text text-xs leading-relaxed">
-                      {item.desc}
-                    </p>
+                  <div className="relative aspect-[16/9] overflow-hidden">
+                    <Image
+                      src={s.image}
+                      alt={s.alt}
+                      fill
+                      sizes="(min-width: 1024px) 55vw, 100vw"
+                      className="object-cover"
+                    />
+                    <div className="absolute inset-0 bg-navy/15" aria-hidden="true" />
                   </div>
                 </div>
-              ))}
+
+                <ul className="border-t border-navy/15 dark:border-white/10">
+                  {s.capabilities.map((c, i) => (
+                    <li
+                      key={c.title}
+                      className="grid grid-cols-[3rem_1fr] sm:grid-cols-[4rem_1fr] gap-4 py-6 border-b border-navy/10 dark:border-white/10"
+                    >
+                      <span className="font-serif italic text-gold/70 text-lg">
+                        {s.index}.{i + 1}
+                      </span>
+                      <div>
+                        <p className="font-serif text-lg text-navy dark:text-white mb-1.5">
+                          {c.title}
+                        </p>
+                        <p className="text-body-text dark:text-white/55 text-sm leading-relaxed">
+                          {c.desc}
+                        </p>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      ))}
 
       {/* SECTORS SERVED */}
-      <section className="bg-navy py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-10">
-            <p className="text-gold text-xs uppercase tracking-widest font-medium mb-2">
-              Industry Expertise
-            </p>
-            <h2 className="text-3xl font-bold text-white">Sectors We Serve</h2>
-          </div>
-          <div className="flex flex-wrap justify-center gap-4">
-            {sectors.map((s) => (
-              <div
-                key={s.label}
-                className="flex items-center gap-3 bg-white/10 border border-white/20 rounded-full px-6 py-3"
-              >
-                <s.Icon size={18} className="text-gold shrink-0" />
-                <span className="text-white text-sm font-medium">{s.label}</span>
-              </div>
+      <section className="relative bg-navy dark:bg-dark-page py-20 border-t border-white/10 overflow-hidden">
+        <CurveFlourish className="absolute -bottom-10 -left-8 w-[340px] text-gold opacity-50" />
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <Eyebrow center className="mb-7">
+            Industry Expertise
+          </Eyebrow>
+          <h2 className="font-serif text-4xl text-white mb-12">
+            Sectors We <span className="italic text-gold">Serve</span>
+          </h2>
+          <ul className="flex flex-wrap justify-center items-baseline gap-x-4 gap-y-5">
+            {sectors.map((s, i) => (
+              <li key={s} className="flex items-baseline gap-4">
+                <span className="font-serif text-xl sm:text-2xl text-white/90">
+                  {s}
+                </span>
+                {i < sectors.length - 1 && (
+                  <span className="text-gold text-xl" aria-hidden="true">
+                    ·
+                  </span>
+                )}
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       </section>
 
       {/* WHY ENGAGE US */}
-      <section className="bg-brand-bg py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <p className="text-gold text-xs uppercase tracking-widest font-medium mb-2">
-              Our Advantage
-            </p>
-            <h2 className="text-3xl font-bold text-navy dark:text-white">
-              Why Engage Us
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-4xl mx-auto">
-            {differentiators.map((d) => (
-              <div
-                key={d.text}
-                className="flex items-center gap-3 bg-white dark:bg-dark-card rounded-lg px-5 py-4 border border-gray-100 dark:border-white/10 shadow-sm"
-              >
-                <d.Icon size={20} className="text-gold shrink-0" />
-                <span className="text-body-text text-sm font-medium">
-                  {d.text}
-                </span>
-              </div>
-            ))}
+      <section className="relative bg-paper dark:bg-dark-page py-24 lg:py-32 border-t border-navy/10 dark:border-white/10 overflow-hidden">
+        <CurveFlourish className="absolute -bottom-8 left-0 w-[320px] text-gold opacity-45" />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+            <div className="lg:col-span-4 section-reveal">
+              <Eyebrow className="mb-6">Our Advantage</Eyebrow>
+              <h2 className="font-serif text-4xl text-navy dark:text-white leading-tight">
+                Why <span className="italic text-gold">Engage Us</span>
+              </h2>
+            </div>
+            <div className="lg:col-span-8 section-reveal reveal-delay-1">
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 border-t border-navy/15 dark:border-white/10">
+                {differentiators.map((d, i) => (
+                  <li
+                    key={d}
+                    className="flex items-baseline gap-5 py-5 border-b border-navy/10 dark:border-white/10"
+                  >
+                    <span className="font-serif italic text-gold/70 text-lg w-7 shrink-0">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <span className="text-navy dark:text-white/80 text-[15px] font-medium">
+                      {d}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="bg-navy py-20 text-center">
-        <div className="max-w-2xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-white mb-4">
-            Need a Specific Service? Let&apos;s Talk.
-          </h2>
-          <p className="text-white/70 text-lg mb-8">
-            Reach out with your requirements and we will respond within two
-            business days with a tailored proposal.
-          </p>
-          <Link
-            href="/contact"
-            className="inline-block px-10 py-4 rounded bg-gold text-navy font-bold text-sm tracking-wide hover:brightness-110 transition-all"
-          >
-            Request a Proposal
-          </Link>
+      <section className="bg-navy dark:bg-dark-page py-24 border-t border-white/10">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6">
+          <div className="relative border border-white/15 px-6 py-16 sm:px-16 text-center section-reveal">
+            <CornerBrackets />
+            <Eyebrow center className="mb-7">
+              Start a Conversation
+            </Eyebrow>
+            <h2 className="font-serif text-3xl sm:text-4xl text-white leading-tight mb-6">
+              Need a Specific Service?{" "}
+              <span className="italic text-gold">Let&apos;s Talk.</span>
+            </h2>
+            <p className="text-white/60 text-lg mb-10 max-w-2xl mx-auto">
+              Reach out with your requirements and we will respond within two
+              business days with a tailored proposal.
+            </p>
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-3 px-11 py-4 bg-gold text-navy text-[11px] uppercase tracking-[0.22em] font-bold hover:brightness-110 transition-all"
+            >
+              Request a Proposal
+              <ArrowRight size={15} />
+            </Link>
+          </div>
         </div>
       </section>
     </>

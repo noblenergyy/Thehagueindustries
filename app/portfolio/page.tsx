@@ -2,7 +2,9 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import FloatingPathsBg from "@/components/FloatingPaths";
+import { ArrowRight } from "lucide-react";
+import Eyebrow from "@/components/Eyebrow";
+import { CornerBrackets, CurveFlourish } from "@/components/Ornaments";
 
 const projects = [
   {
@@ -41,12 +43,12 @@ const projects = [
 
 const filters = ["All", "Oil & Gas", "Government", "Mining", "B2B", "Financial Services", "Healthcare", "Digitalization"];
 
-const statusStyle: Record<string, string> = {
-  Completed: "bg-green-100 text-green-700",
-  Delivered: "bg-blue-100 text-blue-700",
-  "In Progress": "bg-amber-100 text-amber-700",
-  "Under Review": "bg-amber-100 text-amber-700",
-  Ongoing: "bg-purple-100 text-purple-700",
+const statusDot: Record<string, string> = {
+  Completed: "bg-green-600",
+  Delivered: "bg-gold",
+  "In Progress": "bg-amber-500",
+  "Under Review": "bg-amber-500",
+  Ongoing: "bg-purple-500",
 };
 
 export default function PortfolioPage() {
@@ -65,38 +67,41 @@ export default function PortfolioPage() {
     <>
       {/* PAGE HERO */}
       <section
-        className="relative pt-32 pb-20 px-4 overflow-hidden"
-        style={{
-          backgroundImage: "linear-gradient(135deg, #0d1a30 0%, #1B2A4A 100%)",
-        }}
+        className="relative pt-40 pb-20 overflow-hidden border-b border-navy/10 dark:border-white/10"
+        style={{ backgroundImage: "var(--hero-bg)" }}
       >
-        <FloatingPathsBg />
-        <div className="relative z-10 max-w-4xl mx-auto text-center">
-          <p className="animate-fade-up text-gold text-xs uppercase tracking-widest font-medium mb-3">
-            Track Record
-          </p>
-          <h1 className="animate-fade-up delay-100 text-4xl sm:text-5xl font-bold text-white mb-4">
-            Our Work
-          </h1>
-          <p className="animate-fade-up delay-200 text-white/70 text-lg max-w-2xl mx-auto">
-            A record of delivery across sectors and geographies.
-          </p>
+        <CurveFlourish className="absolute -top-8 right-0 w-[340px] sm:w-[440px] text-gold" flip />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-end">
+            <div className="lg:col-span-7">
+              <Eyebrow className="animate-fade-up mb-7">Track Record</Eyebrow>
+              <h1 className="animate-fade-up delay-100 font-serif text-5xl sm:text-6xl text-navy dark:text-white leading-[1.05]">
+                Our <span className="italic text-gold">Work</span>
+              </h1>
+            </div>
+            <div className="lg:col-span-5">
+              <p className="animate-fade-up delay-200 text-body-text dark:text-white/65 text-lg leading-relaxed lg:border-l lg:border-gold/50 lg:pl-8">
+                A record of delivery across sectors and geographies.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* FILTER + GRID */}
-      <section className="bg-brand-bg py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* FILTER + INDEX */}
+      <section className="relative bg-paper dark:bg-dark-page py-20 lg:py-28 overflow-hidden">
+        <CurveFlourish className="absolute -bottom-8 left-0 w-[320px] text-gold opacity-40" />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Filter bar */}
-          <div className="flex flex-wrap gap-2 mb-10">
+          <div className="flex flex-wrap gap-x-8 gap-y-3 mb-16 pb-6 border-b border-navy/15 dark:border-white/10">
             {filters.map((f) => (
               <button
                 key={f}
                 onClick={() => setActive(f)}
-                className={`px-5 py-2 rounded-full text-sm font-medium border transition-all ${
+                className={`text-[11px] uppercase tracking-[0.22em] font-semibold pb-1 border-b-2 transition-colors ${
                   active === f
-                    ? "bg-navy text-white border-navy"
-                    : "bg-white dark:bg-dark-card text-body-text dark:text-white/70 border-gray-200 dark:border-white/10 hover:border-navy hover:text-navy dark:hover:border-gold dark:hover:text-gold"
+                    ? "text-navy dark:text-white border-gold"
+                    : "text-body-text/70 dark:text-white/45 border-transparent hover:text-navy dark:hover:text-white"
                 }`}
               >
                 {f}
@@ -104,48 +109,67 @@ export default function PortfolioPage() {
             ))}
           </div>
 
-          {/* Project grid */}
+          {/* Project index */}
           {filtered.length === 0 ? (
-            <div className="text-center py-20">
-              <p className="text-body-text text-lg">
+            <div className="text-center py-24">
+              <p className="font-serif text-2xl text-navy dark:text-white mb-3">
                 No projects in this category yet.
               </p>
-              <p className="text-body-text/60 text-sm mt-2">
+              <p className="text-body-text dark:text-white/50 text-sm">
                 More engagements are being added as our portfolio grows.
               </p>
             </div>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {filtered.map((p) => (
-                <div
-                  key={p.title}
-                  className="bg-white dark:bg-dark-card rounded-lg p-6 shadow-sm border border-gray-100 dark:border-white/10 flex flex-col hover:shadow-md transition-shadow"
+            <div className="border-t border-navy/15 dark:border-white/10">
+              {filtered.map((p, i) => (
+                <article
+                  key={`${active}-${p.title}`}
+                  className="animate-fade-up grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 py-12 border-b border-navy/10 dark:border-white/10"
+                  style={{ animationDelay: `${i * 90}ms` }}
                 >
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="text-xs font-semibold text-gold uppercase tracking-wide">
-                      {p.sector}
+                  {/* Index + meta */}
+                  <div className="lg:col-span-3 flex lg:flex-col items-baseline lg:items-start justify-between lg:justify-start gap-4">
+                    <span className="font-serif italic text-gold text-3xl">
+                      {String(projects.indexOf(p) + 1).padStart(2, "0")}
                     </span>
-                    <span
-                      className={`text-xs px-2.5 py-1 rounded-full font-medium ${
-                        statusStyle[p.status] ?? "bg-gray-100 text-gray-700"
-                      }`}
-                    >
-                      {p.status}
-                    </span>
+                    <div className="flex lg:flex-col items-baseline lg:items-start gap-4 lg:gap-2 lg:mt-6">
+                      <span className="text-[10px] font-semibold text-gold uppercase tracking-[0.28em]">
+                        {p.sector}
+                      </span>
+                      <span className="text-[10px] uppercase tracking-[0.28em] text-body-text/70 dark:text-white/40">
+                        {p.year}
+                      </span>
+                    </div>
                   </div>
-                  <h3 className="font-bold text-navy dark:text-white text-base mb-2 leading-snug">
-                    {p.title}
-                  </h3>
-                  <p className="text-body-text text-sm leading-relaxed flex-1">
-                    {p.desc}
-                  </p>
-                  <div className="flex items-center justify-between mt-5 pt-4 border-t border-gray-100 dark:border-white/10">
-                    <span className="text-xs text-body-text/60 font-medium">
+
+                  {/* Title + description */}
+                  <div className="lg:col-span-6">
+                    <h3 className="font-serif text-2xl lg:text-[1.7rem] text-navy dark:text-white leading-snug mb-4">
+                      {p.title}
+                    </h3>
+                    <p className="text-body-text dark:text-white/55 text-sm leading-loose">
+                      {p.desc}
+                    </p>
+                  </div>
+
+                  {/* Client + status */}
+                  <div className="lg:col-span-3 flex lg:flex-col items-center lg:items-end justify-between lg:justify-start gap-4 lg:text-right">
+                    <p className="text-[11px] uppercase tracking-[0.22em] font-semibold text-body-text/80 dark:text-white/50">
                       {p.client}
-                    </span>
-                    <span className="text-xs text-body-text/60">{p.year}</span>
+                    </p>
+                    <p className="flex items-center gap-2.5 lg:mt-4">
+                      <span
+                        className={`inline-block w-1.5 h-1.5 rounded-full ${
+                          statusDot[p.status] ?? "bg-gray-400"
+                        }`}
+                        aria-hidden="true"
+                      />
+                      <span className="text-[11px] uppercase tracking-[0.22em] text-navy dark:text-white font-semibold">
+                        {p.status}
+                      </span>
+                    </p>
                   </div>
-                </div>
+                </article>
               ))}
             </div>
           )}
@@ -153,22 +177,29 @@ export default function PortfolioPage() {
       </section>
 
       {/* CTA */}
-      <section className="relative bg-navy py-20 text-center overflow-hidden">
-        <FloatingPathsBg />
-        <div className="relative z-10 max-w-2xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-white mb-4">
-            Have a Project in Mind? Let Us Deliver It.
-          </h2>
-          <p className="text-white/70 text-lg mb-8">
-            We bring the same commitment to every mandate, regardless of sector,
-            scale, or geography.
-          </p>
-          <Link
-            href="/contact"
-            className="inline-block px-10 py-4 rounded bg-gold text-navy font-bold text-sm tracking-wide hover:brightness-110 transition-all"
-          >
-            Contact Us
-          </Link>
+      <section className="bg-navy dark:bg-dark-page py-24 border-t border-white/10">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6">
+          <div className="relative border border-white/15 px-6 py-16 sm:px-16 text-center section-reveal">
+            <CornerBrackets />
+            <Eyebrow center className="mb-7">
+              Your Mandate
+            </Eyebrow>
+            <h2 className="font-serif text-3xl sm:text-4xl text-white leading-tight mb-6">
+              Have a Project in Mind?{" "}
+              <span className="italic text-gold">Let Us Deliver It.</span>
+            </h2>
+            <p className="text-white/60 text-lg mb-10 max-w-2xl mx-auto">
+              We bring the same commitment to every mandate, regardless of
+              sector, scale, or geography.
+            </p>
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-3 px-11 py-4 bg-gold text-navy text-[11px] uppercase tracking-[0.22em] font-bold hover:brightness-110 transition-all"
+            >
+              Contact Us
+              <ArrowRight size={15} />
+            </Link>
+          </div>
         </div>
       </section>
     </>

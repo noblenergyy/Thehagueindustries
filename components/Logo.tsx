@@ -17,7 +17,7 @@ export default function Logo({ size = 36, showWordmark = true, className = "", l
         viewBox="-1.76 -0.02 1969.52 2048.02"
         xmlns="http://www.w3.org/2000/svg"
         aria-label="The Hague Industries logo mark"
-        style={!light ? { filter: "brightness(0)" } : undefined}
+        className={light ? undefined : "brightness-0 dark:brightness-100"}
       >
         <path
           fill="white"
@@ -31,11 +31,11 @@ export default function Logo({ size = 36, showWordmark = true, className = "", l
 
       {showWordmark && (
         <div className="flex flex-col leading-tight">
-          <span className={`font-bold text-sm uppercase tracking-wide ${light ? "text-white" : "text-navy dark:text-white"}`}>
+          <span className={`font-serif font-semibold text-[15px] uppercase tracking-[0.14em] ${light ? "text-white" : "text-navy dark:text-white"}`}>
             The Hague Industries
           </span>
-          <span className="text-[10px] tracking-widest uppercase mt-0.5 text-gold">
-            Ltd | RC 8551874
+          <span className="text-[9px] tracking-[0.3em] uppercase mt-1 text-gold">
+            Ltd &middot; RC 8551874
           </span>
         </div>
       )}

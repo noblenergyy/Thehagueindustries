@@ -7,7 +7,7 @@ const DUR = 430;
 
 type Item = { word: string; key: number; state: "below" | "in" | "above" };
 
-export default function CyclingWord() {
+export default function CyclingWord({ justify = "center" }: { justify?: "start" | "center" }) {
   const [items, setItems] = useState<Item[]>([{ word: words[0], key: 0, state: "in" }]);
 
   useEffect(() => {
@@ -47,7 +47,7 @@ export default function CyclingWord() {
       {items.map(({ word, key, state }) => (
         <span
           key={key}
-          className="absolute inset-0 flex justify-center text-navy dark:text-white"
+          className={`absolute inset-0 flex ${justify === "center" ? "justify-center" : "justify-start"}`}
           style={{
             transition:
               state === "below"
