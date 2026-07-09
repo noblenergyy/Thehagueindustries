@@ -132,7 +132,9 @@ export function PaperDesignBackground({
     <div
       ref={containerRef}
       className={[
-        "pointer-events-none absolute inset-0 overflow-hidden",
+        // Oversized by 12px on all sides: the mouse parallax translates this
+        // layer up to 8px, which would otherwise expose a bare edge strip.
+        "pointer-events-none absolute -inset-3 overflow-hidden",
         "z-0",
         "transition-colors duration-500",
         className,
