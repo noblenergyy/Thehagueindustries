@@ -20,7 +20,18 @@ export function PaperDesignBackground({
   const [isDark, setIsDark] = useState(false);
   const [inView, setInView] = useState(true);
   const [reducedMotion, setReducedMotion] = useState(false);
+  const [isSmall, setIsSmall] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
+
+  // Phones get a zoomed-out, finer pattern: the desktop scale crops the wave
+  // on narrow portrait canvases (looks cut off / over-zoomed).
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 767px)");
+    setIsSmall(mq.matches);
+    const handler = (e: MediaQueryListEvent) => setIsSmall(e.matches);
+    mq.addEventListener("change", handler);
+    return () => mq.removeEventListener("change", handler);
+  }, []);
 
   // Follow the site's own theme (navbar toggle sets the `dark` class on <html>);
   // syncing to the OS here would fight that toggle.
@@ -66,8 +77,8 @@ export function PaperDesignBackground({
         front: mix("#614B00", "#A87C00", t * 0.35), // warm cyber-gold
         bg: "#0A1428", // brand navy, not black
         speed: 0.28 + t * 0.35,
-        px: Math.round(2 + t * 2), // 2..4
-        scale: 1.05 + t * 0.15,
+        px: isSmall ? 2 : Math.round(2 + t * 2), // 2..4
+        scale: isSmall ? 0.8 : 1.05 + t * 0.15,
         glow: "radial-gradient(60% 40% at 50% 40%, rgba(255,210,90,0.10), transparent 70%)",
       };
     } else {
@@ -78,14 +89,14 @@ export function PaperDesignBackground({
         front: mix("#3B5498", "#7C99D6", t * 0.35),
         bg: "#F7F4EC", // warm paper
         speed: 0.22 + t * 0.28,
-        px: Math.round(2 + t * 2),
-        scale: 1.03 + t * 0.12,
+        px: isSmall ? 2 : Math.round(2 + t * 2),
+        scale: isSmall ? 0.8 : 1.03 + t * 0.12,
         // Blue + gold mash: warm gold pooling low-right, cool blue high-center
         glow:
           "radial-gradient(50% 45% at 72% 72%, rgba(184,150,46,0.26), transparent 70%), radial-gradient(60% 40% at 45% 35%, rgba(90,120,190,0.16), transparent 70%)",
       };
     }
-  }, [isDark, intensity]);
+  }, [isDark, intensity, isSmall]);
 
   // Optional mouse parallax — rAF-throttled so mousemove never floods style writes
   useEffect(() => {
@@ -146,7 +157,6 @@ export function PaperDesignBackground({
           type="4x4"
           pxSize={config.px}
           scale={config.scale}
-          minPixelRatio={1}
           maxPixelCount={520000}
           style={{
             height: "100%",

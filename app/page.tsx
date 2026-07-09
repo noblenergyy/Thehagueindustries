@@ -110,10 +110,10 @@ export default function HomePage() {
           className="absolute inset-0 bg-gradient-to-r from-[#F7F4EC]/95 via-[#F7F4EC]/60 to-transparent dark:from-[#0A1428]/90 dark:via-[#0A1428]/40 dark:to-transparent"
           aria-hidden="true"
         />
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-24 pb-32">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full min-w-0 py-24 pb-32">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-14 lg:gap-16 items-center">
             {/* Copy */}
-            <div className="lg:col-span-7">
+            <div className="lg:col-span-7 min-w-0">
               <Eyebrow className="animate-fade-up mb-7">
                 Est. 2025 · Transnational · Multi-Sector
               </Eyebrow>
